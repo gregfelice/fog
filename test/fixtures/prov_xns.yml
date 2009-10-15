@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sessionid: MyString
+  operator: MyString
+  uid: MyString
+  dn: MyString
+  employeenumber: MyString
+  userpassword: MyString
+  userclass: MyString
+  givenname: MyString
+
+two:
+  sessionid: MyString
+  operator: MyString
+  uid: MyString
+  dn: MyString
+  employeenumber: MyString
+  userpassword: MyString
+  userclass: MyString
+  givenname: MyString

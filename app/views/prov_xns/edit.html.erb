@@ -1,0 +1,44 @@
+<h1>Editing prov_xn</h1>
+
+<% form_for(@prov_xn) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :sessionid %><br />
+    <%= f.text_field :sessionid %>
+  </p>
+  <p>
+    <%= f.label :operator %><br />
+    <%= f.text_field :operator %>
+  </p>
+  <p>
+    <%= f.label :uid %><br />
+    <%= f.text_field :uid %>
+  </p>
+  <p>
+    <%= f.label :dn %><br />
+    <%= f.text_field :dn %>
+  </p>
+  <p>
+    <%= f.label :employeenumber %><br />
+    <%= f.text_field :employeenumber %>
+  </p>
+  <p>
+    <%= f.label :userpassword %><br />
+    <%= f.text_field :userpassword %>
+  </p>
+  <p>
+    <%= f.label :userclass %><br />
+    <%= f.text_field :userclass %>
+  </p>
+  <p>
+    <%= f.label :givenname %><br />
+    <%= f.text_field :givenname %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @prov_xn %> |
+<%= link_to 'Back', prov_xns_path %>

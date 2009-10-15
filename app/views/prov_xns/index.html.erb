@@ -1,0 +1,34 @@
+<h1>Listing prov_xns</h1>
+
+<table>
+  <tr>
+    <th>Sessionid</th>
+    <th>Operator</th>
+    <th>Uid</th>
+    <th>Dn</th>
+    <th>Employeenumber</th>
+    <th>Userpassword</th>
+    <th>Userclass</th>
+    <th>Givenname</th>
+  </tr>
+
+<% @prov_xns.each do |prov_xn| %>
+  <tr>
+    <td><%=h prov_xn.sessionid %></td>
+    <td><%=h prov_xn.operator %></td>
+    <td><%=h prov_xn.uid %></td>
+    <td><%=h prov_xn.dn %></td>
+    <td><%=h prov_xn.employeenumber %></td>
+    <td><%=h prov_xn.userpassword %></td>
+    <td><%=h prov_xn.userclass %></td>
+    <td><%=h prov_xn.givenname %></td>
+    <td><%= link_to 'Show', prov_xn %></td>
+    <td><%= link_to 'Edit', edit_prov_xn_path(prov_xn) %></td>
+    <td><%= link_to 'Destroy', prov_xn, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New prov_xn', new_prov_xn_path %>

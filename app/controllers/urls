@@ -1,0 +1,37 @@
+
+
+
+create a user (must provide all info for ldap, google, ad): return status as XML
+  # POST /prov_xns.xml
+
+
+retrieve a user record (containing ldap, google, and ad info): return user as XML
+  # GET /prov_xns/1.xml
+
+
+delete a user (provide uid): return status as http header (200 OK)
+  # DELETE /prov_xns/1.xml 
+
+
+update a user (must provide all info for ldap, google, ad): return status as http header if success, otherwise XML
+  # PUT /prov_xns/1.xml
+
+
+other (not used)
+
+  # GET /prov_xns
+
+  # GET /prov_xns.xml
+
+  # GET /prov_xns/1
+
+  # GET /prov_xns/new
+
+  # GET /prov_xns/1/edit
+
+  # POST /prov_xns
+
+
+  # PUT /prov_xns/1
+
+  # GET /prov_xns/new.xml
