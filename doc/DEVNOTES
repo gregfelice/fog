@@ -1,0 +1,98 @@
+
+fog :: a security administration server
+
+stories
+====================================================
+basic security checks, secret q/a, captcha, etc... (see current chpw app for starters)
+
+fog changes information in: 
+	iplanet ldap (in the script)
+	MS AD (talk to damien)
+	google applications / mail (centralized google account creds) (username and password in scripts)
+
+google apps when used over the web defers to local NYIT authentication
+
+use cases
+=================================================================
+i forgot my password
+i want to change my password
+
+:: see https://register.nyit.edu/reset/ copy text for use cases basics.
+
+
+artifacts
+==================================================
+ip2:/usr/local/google/create_user.pl (brian)
+:: just an example of the google provisioning API.
+:: http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html
+
+
+thor:/usr/local/bin/resetpw.pl (brian)
+accessible at: https://register.nyit.edu/reset/
+:: only works with LDAP currently. new version needs to work with the systems below.
+
+
+environment
+=============================
+do development on ???
+
+deployment design
+============================
+password change system needs to be an isolatable system, deployable on a secure, internal box 
+web front end needs to exist publicly
+
+security design
+=============================
+very nice to have: certificate based authority (see puppet) openssl
+required: https/ssl
+
+alternatively, or perhaps first, based on schedule: 
+system to system basic ip restriction
+system to system password authentication
+
+reference
+================
+rails security
+http://www.rorsecurity.info/journal/?currentPage=3
+
+AR/LDAP
+http://tammersaleh.com/posts/ldap-server-for-activerecord-models
+
+REST client
+http://adamblog.heroku.com/past/2008/3/9/rest_client/
+
+
+
+misc notes
+==================================================
+ip2 / # cd /usr/local/google/
+
+ip2 google # ls
+---------------------------------------------------------------------------------------
+BATCH                     OLD                       batch.sh                  python
+IMAP_COMPLETE             ONETIME                   create_user.pl            update_names_from_dwh.pl
+LOG                       REPORTS                   create_users_from_dwh.pl
+
+ip2 google # crontab -l
+---------------------------------------------------------------------------------------
+#ident  "@(#)root       1.21    04/03/23 SMI"
+#
+# The root crontab should be used to perform accounting data collection.
+#
+#
+10 3 * * * /usr/sbin/logadm
+15 3 * * 0 /usr/lib/fs/nfs/nfsfind
+30 3 * * * [ -x /usr/lib/gss/gsscred_clean ] && /usr/lib/gss/gsscred_clean
+#10 3 * * * /usr/lib/krb5/kprop_script ___slave_kdcs___
+#
+# NYIT Local
+#
+0 3 * * *               ntpdate -s -u ntp.nyit.edu
+58 7,11,23 * * *        /usr/local/bin/scanlog.sh
+30 8 * * *              /usr/local/google/batch.sh >> /usr/local/google/LOG/batch.log 2>&1
+
+
+on ip2 now, moving to automat
+
+
+
