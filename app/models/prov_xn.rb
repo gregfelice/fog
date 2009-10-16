@@ -15,13 +15,13 @@ class ProvXn < ActiveRecord::Base
     
     # get from ldap (pk: username)
     # https://nyitfu.nyit.edu/userfu/dump_ldap.php?search=gfelice
-    # p_ldap = Provisioner::ProvisionerLdap.new
-    # usr_ldap = p_ldap.retrieve_user(id)
+    #p_ldap = Provisioner::ProvisionerLdap.new
+    #usr_ldap = p_ldap.retrieve_user(id)
     
     # get from AD (pk: username)
     # https://nyitfu.nyit.edu/userfu/dump_ad.php?search=gfelice
-    # p_ad = Provisioner::ProvisionerAd.new
-    # usr_ad = p_ad.retrieve_user(id)
+    #p_ad = Provisioner::ProvisionerAd.new
+    #usr_ad = p_ad.retrieve_user(id)
     
     # get from google (pk: username)
     p_goog = get_google_provisioner

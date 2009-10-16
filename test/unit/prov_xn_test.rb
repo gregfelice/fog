@@ -1,5 +1,8 @@
 require 'test_helper'
 
+#
+# need an imap client to test this
+#
 class ProvXnTest < ActiveSupport::TestCase
 
   # Replace this with your real tests.
@@ -10,7 +13,8 @@ class ProvXnTest < ActiveSupport::TestCase
 
   end
   
-  test "provisioner google" do
+
+  def test_provisioner_google
 
     p = Provisioner::ProvisionerGoogle.new
     p.init
@@ -19,8 +23,12 @@ class ProvXnTest < ActiveSupport::TestCase
     
     assert_provxn usr
     
-    usr.password = pwd = "passwd-#{(Time.now.usec).to_s}"
+    #usr.password = pwd = "passwd-#{(Time.now.usec).to_s}"
+
+    usr.password = pwd = "testpassword"
     
+    puts usr.password
+
     p.update_user(usr)
     
     usr = p.retrieve_user("btest")
@@ -28,7 +36,32 @@ class ProvXnTest < ActiveSupport::TestCase
     assert_provxn usr
 
   end
-  
+
+  def test_provisioner_iplanet
+    
+    p = Provisioner::ProvisionerIplanet.new
+    p.init
+ 
+    usr = p.retrieve_user("12371928679182347") # employeeid
+    
+    assert_provxn usr
+
+    usr.password = pwd = "testpassword"
+    
+    # puts usr.password
+
+    p.update_user(usr)
+    
+    usr = p.retrieve_user("29387198273123")
+    
+    assert_provxn usr
+
+  end
+
+  def test_provisioner_ad
+
+  end
+
   test "provxn retrieval" do
     
     usr = ProvXn.find("btest")
@@ -44,9 +77,7 @@ class ProvXnTest < ActiveSupport::TestCase
     assert_not_nil usr
         
     usr.username = "btest"
-    usr.password = "password"
-    usr.familyname = "hammerschitdt"
-    usr.givenname = "oomler"
+    usr.password = "testpassword"
     
     usr.update
     
@@ -65,8 +96,6 @@ class ProvXnTest < ActiveSupport::TestCase
     assert_not_nil usr
 
     assert_not_nil usr.username
-    assert_not_nil usr.familyname
-    assert_not_nil usr.givenname
   
   end
   

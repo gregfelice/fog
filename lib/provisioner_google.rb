@@ -163,7 +163,7 @@ EOF
       </atom:entry>
 EOF
       
-      # puts "XML: #{xml}"
+      puts "XML: #{xml}"
       
       xmldoc = Document.new(xml)
       
@@ -208,7 +208,7 @@ EOF
       
       resp = @http.put(path, xmldoc, @headers)
       
-      #puts "PUT resp: #{resp} #{resp.body}\n\n"
+      puts "PUT resp: #{resp} #{resp.body}\n\n"
       
       return resp
       
