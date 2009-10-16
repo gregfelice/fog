@@ -2122,3 +2122,1298 @@ provxn.find(): passed uid of btest
 #<Provisioner::ProvisionerGoogle:0x7ff174407320 @http=#<Net::HTTP apps-apis.google.com:443 open=false>, @headers={"content-type"=>"application/atom+xml", "authorization"=>"GoogleLogin Auth=DQAAAHgAAACT2l_w45zBHWuilgpsCfewwGMB0oBiGD8o_mrGU68pqfEy-w19MMKsjDLkenrprHxRjSs7xRjzWc0q-BwK7PPiyA3qcXMvxCrdJzCBBbBq7pkEqke0faSaDcIllbYLgjKQTdZnd824cOb9ZUvt3gZZ5iAoQWIDKofOOIj0PDihtg"}>
   [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
 Completed in 437ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/btest.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:34:32) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (94.1ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:34:56) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:34:57) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:36:14) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:36:15) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:36:16) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:36:24) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:49:58) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (110.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:50:01) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:50:20) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;35;1mProvXn Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 1281ms (View: 3, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/btest.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:51:46) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff176966530>):
+  app/models/prov_xn.rb:25:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (21.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:51:48) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff1744c8570>):
+  app/models/prov_xn.rb:25:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:51:49) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff1759727f0>):
+  app/models/prov_xn.rb:25:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (115.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:52:20) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `this' for #<Class:0x7ff1745fd198>):
+  app/models/prov_xn.rb:57
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:52:21) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `this' for #<Class:0x7ff175981fc0>):
+  app/models/prov_xn.rb:57
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (99.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:52:23) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `this' for #<Class:0x7ff174570310>):
+  app/models/prov_xn.rb:57
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:52:42) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff17595f768>):
+  app/models/prov_xn.rb:27:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (105.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:52:44) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff174633a68>):
+  app/models/prov_xn.rb:27:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:52:53) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff175aeea70>):
+  app/models/prov_xn.rb:27:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (121.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:52:54) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff174791040>):
+  app/models/prov_xn.rb:27:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:52:54) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff174323648>):
+  app/models/prov_xn.rb:27:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:53:03) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff174947038>):
+  app/models/prov_xn.rb:42:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:53:04) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff17441a470>):
+  app/models/prov_xn.rb:42:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:53:06) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff1758ffdb8>):
+  app/models/prov_xn.rb:42:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (114.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:53:18) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff174582178>):
+  app/models/prov_xn.rb:39:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (22.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:53:20) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff1759e7140>):
+  app/models/prov_xn.rb:39:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (98.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:53:21) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+
+NameError (undefined local variable or method `get_provisioner_google' for #<Class:0x7ff1746d8c20>):
+  app/models/prov_xn.rb:39:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:53:32) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.retrieve_user):
+  app/models/prov_xn.rb:38:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (115.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:53:56) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.retrieve_user):
+  app/models/prov_xn.rb:38:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:53:57) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.retrieve_user):
+  app/models/prov_xn.rb:38:in `find'
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (21.3ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-15 16:54:05) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (uninitialized constant ProvXnsController::ProvXn):
+  app/controllers/prov_xns_controller.rb:21:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 10:10:28) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+  [4;36;1mProvXn Columns (5.3ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 1370ms (View: 1, DB: 6) | 200 OK [http://automattest.nyit.edu/prov_xns/btest.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProvXns (20091015163047)
+Migrating to ModifyColumns (20091015185242)
+  [4;36;1mSQL (6.3ms)[0m   [0;1mDROP TABLE `prov_xns`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091015185242')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `prov_xns`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `prov_xns`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProvXns (20091015163047)
+Migrating to ModifyColumns (20091015185242)
+Migrating to AddTimestampColumns (20091016160236)
+  [4;36;1mSQL (10.8ms)[0m   [0;1mALTER TABLE `prov_xns` ADD `created_at` datetime[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mALTER TABLE `prov_xns` ADD `updated_at` datetime[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091016160236')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `prov_xns`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `prov_xns`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:17:37) [GET]
+  Parameters: {"id"=>"btest"}
+provxn.find(): passed uid of btest
+
+NameError (uninitialized constant ProvXn::Provisioner):
+  app/models/prov_xn.rb:24:in `find'
+  app/controllers/prov_xns_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (14.9ms)
+Rendered rescues/_request_and_response (0.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-16 12:19:53) [GET]
+  [4;36;1mProvXn Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 9ms (View: 4, DB: 3) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:21:42) [GET]
+  Parameters: {"id"=>"btest"}
+provxn.find(): passed uid of btest
+
+NameError (uninitialized constant ProvXn::Provisioner):
+  app/models/prov_xn.rb:24:in `find'
+  app/controllers/prov_xns_controller.rb:17:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.0ms)
+Rendered rescues/_request_and_response (0.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:22:36) [GET]
+  Parameters: {"id"=>"btest"}
+provxn.find(): passed uid of btest
+
+NameError (uninitialized constant ProvXn::Provisioner):
+  app/models/prov_xn.rb:24:in `find'
+  app/controllers/prov_xns_controller.rb:17:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:22:37) [GET]
+  Parameters: {"id"=>"btest"}
+provxn.find(): passed uid of btest
+
+NameError (uninitialized constant ProvXn::Provisioner):
+  app/models/prov_xn.rb:24:in `find'
+  app/controllers/prov_xns_controller.rb:17:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:24:07) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+
+NameError (uninitialized constant ProvXn::Provisioner):
+  app/models/prov_xn.rb:24:in `find'
+  app/controllers/prov_xns_controller.rb:20:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (17.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:25:22) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+loadpath : /usr/lib64/ruby/gems/1.8/gems/actionmailer-2.3.4/lib/action_mailer/vendor/tmail-1.2.3/home/gregf/dev/fog/app/controllers//home/gregf/dev/fog/app/home/gregf/dev/fog/app/models/home/gregf/dev/fog/app/controllers/home/gregf/dev/fog/app/helpers/home/gregf/dev/fog/lib/home/gregf/dev/fog/vendor/usr/lib64/ruby/gems/1.8/gems/rails-2.3.4/lib/../builtin/rails_info//usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/vendor/i18n-0.1.3/lib/usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/vendor/tzinfo-0.3.12/usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/vendor/memcache-client-1.7.4/usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/vendor/builder-2.1.2/usr/lib64/ruby/gems/1.8/gems/rails-2.3.4/lib/usr/lib64/ruby/gems/1.8/gems/rake-0.8.7/bin/usr/lib64/ruby/gems/1.8/gems/rake-0.8.7/lib/usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/bin/usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/bin/usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/bin/usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/bin/usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/usr/lib64/ruby/gems/1.8/gems/actionmailer-2.3.4/bin/usr/lib64/ruby/gems/1.8/gems/actionmailer-2.3.4/lib/usr/lib64/ruby/gems/1.8/gems/activeresource-2.3.4/bin/usr/lib64/ruby/gems/1.8/gems/activeresource-2.3.4/lib/usr/lib64/ruby/gems/1.8/gems/rails-2.3.4/bin/usr/lib64/ruby/gems/1.8/gems/mysql-2.8.1/bin/usr/lib64/ruby/gems/1.8/gems/mysql-2.8.1/lib/usr/lib64/ruby/gems/1.8/gems/mysql-2.8.1/ext/usr/lib/ruby/site_ruby/1.8/usr/lib64/ruby/site_ruby/1.8/usr/lib64/ruby/site_ruby/1.8/x86_64-linux/usr/lib/ruby/site_ruby/usr/lib64/ruby/site_ruby/usr/lib64/site_ruby/1.8/usr/lib64/site_ruby/1.8/x86_64-linux/usr/lib64/site_ruby/usr/lib/ruby/1.8/usr/lib64/ruby/1.8/usr/lib64/ruby/1.8/x86_64-linux.
+provxn.find(): passed uid of btest
+
+NameError (uninitialized constant ProvXn::Provisioner):
+  app/models/prov_xn.rb:24:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (20.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:26:55) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+provxn.find(): passed uid of btest
+
+NameError (uninitialized constant ProvXn::Provisioner):
+  app/models/prov_xn.rb:23:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (113.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:27:15) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+ProvXn.find(): passed uid of btest
+
+NameError (uninitialized constant ProvXn::Provisioner):
+  app/models/prov_xn.rb:23:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:27:47) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+ProvXn.find(): passed uid of btest
+
+NameError (undefined local variable or method `logger' for #<Provisioner::ProvisionerGoogle:0x7ffdc3af9f88>):
+  lib/provisioner_google.rb:86:in `retrieve_user'
+  app/models/prov_xn.rb:28:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:28:09) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+
+NameError (undefined local variable or method `logger' for #<Provisioner::ProvisionerGoogle:0x7ffdc40e4420>):
+  lib/provisioner_google.rb:86:in `retrieve_user'
+  app/models/prov_xn.rb:28:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:28:30) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+ProvXn.find(): passed uid of btest
+
+NameError (undefined local variable or method `logger' for #<Provisioner::ProvisionerGoogle:0x7ffdc3abf928>):
+  lib/provisioner_google.rb:86:in `retrieve_user'
+  app/models/prov_xn.rb:28:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:28:34) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+ProvXn.find(): passed uid of btest
+
+NameError (undefined local variable or method `logger' for #<Provisioner::ProvisionerGoogle:0x7ffdc413bd60>):
+  lib/provisioner_google.rb:86:in `retrieve_user'
+  app/models/prov_xn.rb:28:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:28:34) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+ProvXn.find(): passed uid of btest
+
+NameError (undefined local variable or method `logger' for #<Provisioner::ProvisionerGoogle:0x7ffdc3aeaa88>):
+  lib/provisioner_google.rb:86:in `retrieve_user'
+  app/models/prov_xn.rb:28:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:28:50) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+ProvXn.find(): passed uid of btest
+
+NameError (undefined local variable or method `logger' for #<Provisioner::ProvisionerGoogle:0x7ffdc6a42ce0>):
+  lib/provisioner_google.rb:86:in `retrieve_user'
+  app/models/prov_xn.rb:28:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:28:51) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+ProvXn.find(): passed uid of btest
+
+NameError (undefined local variable or method `logger' for #<Provisioner::ProvisionerGoogle:0x7ffdc2933470>):
+  lib/provisioner_google.rb:86:in `retrieve_user'
+  app/models/prov_xn.rb:28:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.25.32 at 2009-10-16 12:29:02) [GET]
+  Parameters: {"id"=>"btest"}
+ProvXnsController.show() param id: btest
+ProvXn.find(): passed uid of btest
+  [4;36;1mProvXn Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+
+NoMethodError (undefined method `userpassword=' for #<ProvXn:0x7f108e60cbb0>):
+  app/models/prov_xn.rb:33:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (9.7ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m

@@ -9,17 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091015163047) do
+ActiveRecord::Schema.define(:version => 20091016160236) do
 
   create_table "prov_xns", :force => true do |t|
-    t.string   "sessionid"
-    t.string   "operator"
-    t.string   "uid"
-    t.string   "dn"
+    t.string   "username"
+    t.string   "password"
     t.string   "employeenumber"
-    t.string   "userpassword"
-    t.string   "userclass"
+    t.string   "familyname"
     t.string   "givenname"
+    t.string   "suspended"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

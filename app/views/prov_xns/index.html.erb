@@ -2,26 +2,22 @@
 
 <table>
   <tr>
-    <th>Sessionid</th>
-    <th>Operator</th>
-    <th>Uid</th>
-    <th>Dn</th>
-    <th>Employeenumber</th>
-    <th>Userpassword</th>
-    <th>Userclass</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Empno</th>
+    <th>Familyname</th>
     <th>Givenname</th>
+    <th>Suspended</th>
   </tr>
 
 <% @prov_xns.each do |prov_xn| %>
   <tr>
-    <td><%=h prov_xn.sessionid %></td>
-    <td><%=h prov_xn.operator %></td>
-    <td><%=h prov_xn.uid %></td>
-    <td><%=h prov_xn.dn %></td>
-    <td><%=h prov_xn.employeenumber %></td>
-    <td><%=h prov_xn.userpassword %></td>
-    <td><%=h prov_xn.userclass %></td>
+    <td><%=h prov_xn.username %></td>
+    <td><%=h prov_xn.password %></td>
+    <td><%=h prov_xn.empno %></td>
+    <td><%=h prov_xn.familyname %></td>
     <td><%=h prov_xn.givenname %></td>
+    <td><%=h prov_xn.suspended %></td>
     <td><%= link_to 'Show', prov_xn %></td>
     <td><%= link_to 'Edit', edit_prov_xn_path(prov_xn) %></td>
     <td><%= link_to 'Destroy', prov_xn, :confirm => 'Are you sure?', :method => :delete %></td>

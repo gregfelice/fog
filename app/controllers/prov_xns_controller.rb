@@ -1,4 +1,3 @@
-
 class ProvXnsController < ApplicationController
 
   # GET /prov_xns
@@ -15,17 +14,17 @@ class ProvXnsController < ApplicationController
   # GET /prov_xns/1
   # GET /prov_xns/1.xml
   def show
-    
-    logger.debug("ProvXnsController.show() param id: #{params[:id]}")
 
-    # overridded model. will pull values from ldap/ad/google, return prov_xn object
+    logger.debug("ProvXnsController.show() param id: #{params[:id]}")
+    
+    # logger.debug("loadpath : #{$LOAD_PATH}")
+
     @prov_xn = ProvXn.find(params[:id])
- 
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @prov_xn }
     end
-
   end
 
   # GET /prov_xns/new

@@ -4,7 +4,6 @@ require 'net/https'
 require 'uri'
 
 require 'provisioner_interface'
-require 'user_entry'
 require 'provisioner_exception'
 require 'object_not_found_exception'
 
@@ -18,6 +17,9 @@ include REXML # so we don't have to preface everything with REXML
 
 @todo compare xml against google dtds
 @todo get header overrides in place for http puts and deletes
+
+google provisioner API docs
+http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html
 
 =end
 module Provisioner
@@ -84,7 +86,7 @@ module Provisioner
     
     def retrieve_user(username)
       
-      logger.debug("retrieve_user: username: #{username}")
+      #logger.debug("retrieve_user: username: #{username}")
 
       raise ArgumentError, "username blank", caller if username.empty? 
 
@@ -94,13 +96,13 @@ module Provisioner
       
       unless ! XPath.match( feed, "/AppsForYourDomainErrors" ).empty?
 
-        user = UserEntry.new      
+        xn = ProvXn.new      
         
-        user.firstname = feed.elements["//apps:name"].attributes["givenName"]
-        user.lastname = feed.elements["//apps:name"].attributes["familyName"]
-        user.username = feed.elements["//apps:login"].attributes["userName"]
+        xn.givenname = feed.elements["//apps:name"].attributes["givenName"]
+        xn.familyname = feed.elements["//apps:name"].attributes["familyName"]
+        xn.username = feed.elements["//apps:login"].attributes["userName"]
         
-        return user
+        return xn
         
       end
       
@@ -125,6 +127,7 @@ module Provisioner
       
       xml = <<EOF
       <?xml version="1.0" encoding="UTF-8"?>
+
       <atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:apps="http://schemas.google.com/apps/2006">
         <atom:category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/apps/2006#user"/>
         <apps:login userName="#{user.username}" password="#{user.password}" suspended="false"/>
@@ -141,25 +144,22 @@ EOF
       
     end
     
-    def update_user(olduser, newuser)
+    # current implementation only updates password field
+    def update_user(provxn)
       
-      raise ArgumentError, "malformed user", caller if olduser == nil || newuser == nil
+      raise ArgumentError, "malformed user", caller if provxn == nil
 
-      path = "/a/feeds/nyit.edu/user/2.0/#{olduser.username}"
+      path = "/a/feeds/nyit.edu/user/2.0/#{provxn.username}"
       
       xml = <<EOF
       <?xml version="1.0" encoding="UTF-8"?>
-        <atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:apps="http://schemas.google.com/apps/2006" xmlns:gd="http://schemas.google.com/g/2005">
-        <atom:id>https://apps-apis.google.com/a/feeds/example.com/user/2.0/#{olduser.username}</atom:id>
-        <atom:updated>1970-01-01T00:00:00.000Z</atom:updated>
-        <atom:category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/apps/2006#user"/>
-        <atom:title type="text">#{olduser.username}</atom:title>
-        <atom:link rel="self" type="application/atom+xml" href="https://apps-apis.google.com/a/feeds/example.com/user/2.0/#{olduser.username}"/>
-        <atom:link rel="edit" type="application/atom+xml" href="https://apps-apis.google.com/a/feeds/example.com/user/2.0/#{olduser.username}"/>
-        <apps:login userName="#{newuser.username}" suspended="false" admin="false" changePasswordAtNextLogin="false" agreedToTerms="true"/>
-        <apps:name familyName="#{newuser.lastname}" givenName="#{newuser.firstname}"/>
-        <gd:feedLink rel="http://schemas.google.com/apps/2006#user.nicknames" href="https://apps-apis.google.com/a/feeds/example.com/nickname/2.0?username=Susy-1321"/>
-        <gd:feedLink rel="http://schemas.google.com/apps/2006#user.groups" href="https://apps-apis.google.com/a/feeds//group/2.0/?recipient=us-sales@example.com"/>
+
+      <atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:apps="http://schemas.google.com/apps/2006" xmlns:gd="http://schemas.google.com/g/2005">
+
+        <atom:id>https://apps-apis.google.com/a/feeds/nyit.edu/user/2.0/#{provxn.username}</atom:id>
+
+        <apps:login userName="#{provxn.username}" password="#{provxn.password}" suspended="false" admin="false" changePasswordAtNextLogin="false" agreedToTerms="true"/>
+
       </atom:entry>
 EOF
       
@@ -188,7 +188,7 @@ EOF
       
       resp = @http.get(path, @headers).body
       
-      logger.debug("GET resp: #{resp}\n\n")
+      #logger.debug("GET resp: #{resp}\n\n")
       
       return resp
       

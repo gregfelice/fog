@@ -2,5 +2,9 @@
 
 ruby script/generate model ProvXn sessionid:string operator:string uid:string dn:string employeenumber:string userpassword:string userclass:string givenname:string
 
-ruby script/generate scaffold ProvXn sessionid:string operator:string uid:string dn:string employeenumber:string userpassword:string userclass:string givenname:string
+
+
+
+
+ruby script/generate scaffold ProvXn username:string password:string empno:string familyname:string givenname:string suspended:string
 

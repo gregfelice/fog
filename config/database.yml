@@ -34,7 +34,7 @@ test:
   database: fog_test
   pool: 5
   username: root
-  password:
+  password: scene24
   socket: /var/lib/mysql/mysql.sock
 
 production:

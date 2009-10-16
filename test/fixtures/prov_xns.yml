@@ -1,21 +1,18 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  sessionid: MyString
-  operator: MyString
-  uid: MyString
-  dn: MyString
-  employeenumber: MyString
-  userpassword: MyString
-  userclass: MyString
-  givenname: MyString
+  username: mystring	
+  password: mystring
+  employeenumber: mystring
+  familyname: mystring
+  givenname: mystring
+  suspended: mystring
 
 two:
-  sessionid: MyString
-  operator: MyString
-  uid: MyString
-  dn: MyString
-  employeenumber: MyString
-  userpassword: MyString
-  userclass: MyString
-  givenname: MyString
+  username: mystring	
+  password: mystring
+  employeenumber: mystring
+  familyname: mystring
+  givenname: mystring
+  suspended: mystring
+
