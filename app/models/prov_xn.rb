@@ -1,22 +1,23 @@
 
 require 'provisioner_google'
+require 'provisioner_iplanet'
 
 class ProvXn < ActiveRecord::Base
 
   #
   # pk is empno
   #
-  def self.find(id)
+  def self.find(employeenumber)
     
     logger.debug("ProvXn.find(): passed uid of #{id}")
     
     # staff/faculty will be in ldap AND ad
     # students will be in ldap AND google.
     
-    # get from ldap (pk: username)
+    # get from ldap (pk: employeenumber)
     # https://nyitfu.nyit.edu/userfu/dump_ldap.php?search=gfelice
-    #p_ldap = Provisioner::ProvisionerLdap.new
-    #usr_ldap = p_ldap.retrieve_user(id)
+    p_iplanet = Provisioner::ProvisionerIplanet.new
+    usr_iplanet = p_iplanet.retrieve_user(id)
     
     # get from AD (pk: username)
     # https://nyitfu.nyit.edu/userfu/dump_ad.php?search=gfelice
@@ -24,10 +25,10 @@ class ProvXn < ActiveRecord::Base
     #usr_ad = p_ad.retrieve_user(id)
     
     # get from google (pk: username)
-    p_goog = get_google_provisioner
+    #p_goog = get_google_provisioner
+    #p_goog.retrieve_user(id)
 
-    return p_goog.retrieve_user(id)
-
+    return usr_iplanet
   end
 
   # override
@@ -42,10 +43,13 @@ class ProvXn < ActiveRecord::Base
   def update
 
     p_goog = ProvXn.get_google_provisioner
-    
-    logger.debug("p_goog: #{p_goog.inspect}")
-
     p_goog.update_user(self)
+
+    #p_goog = ProvXn.get_google_provisioner
+    #p_goog.update_user(self)
+
+    #p_goog = ProvXn.get_google_provisioner
+    #p_goog.update_user(self)
 
   end
   

@@ -12,65 +12,58 @@ module Provisioner
 
   class ProvisionerIplanet < ProvisionerInterface
 
-    @HOST =    'ldap1.nyit.edu'
-    @PORT =    LDAP::LDAP_PORT
+    @HOST = "ldap1.nyit.edu"
+    @PORT = LDAP::LDAP_PORT
     @SSLPORT = LDAP::LDAPS_PORT
     
-    @base = 'ou=people, o=nyit.edu, o=isp'
-    @scope = LDAP::LDAP_SCOPE_SUBTREE
-    @filter = '(uid=dwohlt2)'
-    @attrs = ['sn','cn','givenname','employeenumber','userclass','userpassword']
-    @binduser = 'uid=portal.reset.user,ou=ServiceAccounts,o=nyit.edu,o=isp'
+    @binduser = "uid=portal.reset.user,ou=ServiceAccounts,o=nyit.edu,o=isp"
     @bindpass = 'JuZ3mE4n0w'
     
-    public
+    @ldapconn = nil
     
-    def init
-
-      @ldapconn = LDAP::Conn.new($HOST, $PORT)
+    
+    def init	
+    	  
+  	  @ldapconn = LDAP::Conn.new("ldap.nyit.edu", 389)
       @ldapconn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
       @ldapconn.set_option( LDAP::LDAP_OPT_SIZELIMIT, 999 )
       @ldapconn.set_option( LDAP::LDAP_OPT_TIMELIMIT, 60 )
-      @ldapconn.bind(binduser,bindpass)
+      @ldapconn.bind("uid=portal.reset.user,ou=ServiceAccounts,o=nyit.edu,o=isp","JuZ3mE4n0w")
 
     end
     
     def retrieve_user(employeenumber)
       
-      raise ArgumentError, "username blank", caller if username.empty? 
+      raise ArgumentError, "employeenumber blank", caller if employeenumber.empty? 
+	
+	  base = "ou=people, o=nyit.edu, o=isp"
+    scope = LDAP::LDAP_SCOPE_SUBTREE
 
-      begin
-        entries = ldapconn.search2(base, scope, filter, attrs)
+    filter = "(employeenumber=#{employeenumber})"
+    entries = @ldapconn.search2(base, scope, filter)
 
-        raise ManyResultsReturnedException, "more than one row returned!!!", caller if ! entries.length.equal?(1)
+    if entries.length == 0
+      raise ObjectNotFoundException.new(nil, "No users returned."), "No users returned."
+    elsif entries.empty?
+      raise ObjectNotFoundException.new(nil, "No users returned."), "No users returned."
+    elsif entries.length > 1
+      raise ProvisionerException.new(nil, "More than one user returned."), "More than one user returned."
+    end
 
-        entries.each {|entry| @retrieveduser = entry}
 
-        xn = ProvXn.new      
+    retrievediplanetuser = entries.first
 
-#
-#
-#
-#
-        xn.givenname = feed.elements["//apps:name"].attributes["givenName"]
-        xn.familyname = feed.elements["//apps:name"].attributes["familyName"]
-        xn.username = feed.elements["//apps:login"].attributes["userName"]
-#
-#
-#       
- 
+    xn = ProvXn.new      
 
-        
-        #else
-        #raise ArgumentError, "More or less than 1 user found"
-        #end
-        
-      rescue LDAP::ResultError
-        ldapconn.perror("search")
-        exit
-      end
+    xn.username = retrievediplanetuser['uid']
+    xn.employeenumber = retrievediplanetuser['employeeNumber']
+    xn.familyname = retrievediplanetuser['sn']
+    xn.givenname = retrievediplanetuser['givenName']
+    (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userclass'].to_s == "separated") ? xn.suspended = 1 : xn.suspended = 0
 
-      return xn
+
+
+    return xn
   
     end
     
@@ -97,13 +90,13 @@ module Provisioner
       # 
       # 
 
-      puts "This user is being modified:"
-      puts @retrieveduser['dn']
+      #puts "This user is being modified:"
+      #puts @retrieveduser['dn']
       
-      modifieduser = Hash.new
-      modifieduser['userpassword'] = ['testpassword']
+      #modifieduser = Hash.new
+      #modifieduser['userpassword'] = ['testpassword']
       
-      puts modifieduser.inspect
+      #puts modifieduser.inspect
       
       # MODIFY DEEZ DN
       #begin
@@ -114,7 +107,7 @@ module Provisioner
       #end
       #ldapconn.perror("modify")
       
-      ldapconn.unbind      
+   
       #
       
     end
