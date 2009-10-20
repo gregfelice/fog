@@ -1,32 +1,27 @@
 
 require 'provisioner_google'
 require 'provisioner_iplanet'
+require 'object_not_found_exception'
 
 class ProvXn < ActiveRecord::Base
 
   #
-  # pk is empno
+  # staff/faculty will be in ldap AND ad
+  # students will be in ldap AND google.
+  #
+  # get from ldap (pk: employeenumber)
+  # dump: https://nyitfu.nyit.edu/userfu/dump_ldap.php?search=gfelice
   #
   def self.find(employeenumber)
     
-    logger.debug("ProvXn.find(): passed uid of #{id}")
+    logger.debug("ProvXn.find(): passed employeenumber of #{employeenumber}")
     
-    # staff/faculty will be in ldap AND ad
-    # students will be in ldap AND google.
-    
-    # get from ldap (pk: employeenumber)
-    # https://nyitfu.nyit.edu/userfu/dump_ldap.php?search=gfelice
     p_iplanet = Provisioner::ProvisionerIplanet.new
-    usr_iplanet = p_iplanet.retrieve_user(id)
+    p_iplanet.init
+
+    usr_iplanet = p_iplanet.retrieve_user(employeenumber)
     
-    # get from AD (pk: username)
-    # https://nyitfu.nyit.edu/userfu/dump_ad.php?search=gfelice
-    #p_ad = Provisioner::ProvisionerAd.new
-    #usr_ad = p_ad.retrieve_user(id)
-    
-    # get from google (pk: username)
-    #p_goog = get_google_provisioner
-    #p_goog.retrieve_user(id)
+    logger.debug("user_iplanet: #{usr_iplanet}")
 
     return usr_iplanet
   end
@@ -36,21 +31,48 @@ class ProvXn < ActiveRecord::Base
     raise NotImplementedError
   end
 
+  #
   # override of activerecord implementation.
   #
   # save password change to all three provisioning systems.
   #
   def update
 
-    p_goog = ProvXn.get_google_provisioner
-    p_goog.update_user(self)
+    begin 
+      
+      p_goog = Provisioner::ProvisionerGoogle.new
+      p_goog.init
+      
+      p_iplanet = Provisioner::ProvisionerIplanet.new
+      p_iplanet.init
+      
+      # p_ad = Provisioner::ProvisionerActiveDirectory.new
+      # p_ad.init
+      
+      # retireve username pk from ldap for the google update
+      returned_usr = p_iplanet.retrieve_user(self.employeenumber)
+      self.username = returned_usr.username
+      
+      p_iplanet.update_user(self)
+      # p_ad.update_user(self)
+      p_goog.update_user(self)
 
-    #p_goog = ProvXn.get_google_provisioner
-    #p_goog.update_user(self)
+      return true
+      
+    rescue Provisioner::ObjectNotFoundException
+      
+      self.errors.add("Update: ObjectNotFoundException: " + $!)
+      
+      return false
+      
+    rescue
+      
+      self.errors.add("Update: Unhandled Exception: " + $!)
+      
+      return false
 
-    #p_goog = ProvXn.get_google_provisioner
-    #p_goog.update_user(self)
-
+    end
+        
   end
   
   # override
@@ -60,12 +82,6 @@ class ProvXn < ActiveRecord::Base
 
 
   private 
-
-  def self.get_google_provisioner
-    p_goog = Provisioner::ProvisionerGoogle.new
-    p_goog.init
-    return p_goog
-  end
   
 end
 

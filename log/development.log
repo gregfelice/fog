@@ -3417,3 +3417,2445 @@ Rendering rescues/layout (internal_server_error)
   [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
   [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
   [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CoreController#test (for 10.10.25.32 at 2009-10-19 10:23:11) [GET]
+Rendering core/test
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.lastname) on line #6 of app/views/core/test.html.erb:
+3: 
+4: hi. this is the first page of the fog app. 
+5: 
+6: user: <%= @user.lastname %><br>
+7: user: <%= @user.firstname %><br>
+8: user: <%= @user.username %><br>
+9: 
+
+    app/views/core/test.html.erb:6
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new (for 10.10.25.32 at 2009-10-19 10:23:53) [GET]
+  [4;35;1mProvXn Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+Rendering template within layouts/prov_xns
+Rendering prov_xns/new
+
+ActionView::TemplateError (undefined method `empno' for #<ProvXn:0x7f108e3633c8>) on line #16 of app/views/prov_xns/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :empno %><br />
+16:     <%= f.text_field :empno %>
+17:   </p>
+18:   <p>
+19:     <%= f.label :familyname %><br />
+
+    app/views/prov_xns/new.html.erb:16
+    app/views/prov_xns/new.html.erb:3
+    app/controllers/prov_xns_controller.rb:35:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (121.3ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new (for 10.10.25.32 at 2009-10-19 10:25:52) [GET]
+  [4;36;1mProvXn Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Rendering template within layouts/prov_xns
+Rendering prov_xns/new
+Completed in 23ms (View: 14, DB: 3) | 200 OK [http://automattest.nyit.edu/prov_xns/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 10:25:58) [GET]
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 10:29:25) [GET]
+  [4;36;1mProvXn Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 232ms (View: 6, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 10:29:27) [GET]
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 10:29:28) [GET]
+  [4;36;1mProvXn Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new (for 10.10.25.32 at 2009-10-19 10:29:31) [GET]
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+Rendering template within layouts/prov_xns
+Rendering prov_xns/new
+Completed in 35ms (View: 24, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 10:29:34) [GET]
+  [4;36;1mProvXn Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 11ms (View: 3, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 13:34:23) [GET]
+  [4;36;1mProvXn Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 235ms (View: 7, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 14:09:46) [GET]
+  [4;35;1mProvXn Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 15ms (View: 2, DB: 3) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 14:10:27) [GET]
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 14ms (View: 5, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 14:10:40) [GET]
+  [4;35;1mProvXn Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 12ms (View: 2, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 10.10.25.32 at 2009-10-19 14:25:03) [GET]
+
+ActionController::RoutingError (No route matches "/prov_xn/new.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 14:25:25) [GET]
+  [4;36;1mProvXn Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 11ms (View: 2, DB: 4) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 14:31:34) [GET]
+  [4;36;1mProvXn Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 234ms (View: 5, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 14:46:52) [GET]
+  [4;35;1mProvXn Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 11ms (View: 2, DB: 3) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 15:09:14) [GET]
+  [4;36;1mProvXn Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 12ms (View: 3, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#new to xml (for 10.10.25.32 at 2009-10-19 15:12:28) [GET]
+  [4;35;1mProvXn Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/new.xml]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProvXns (20091015163047)
+Migrating to ModifyColumns (20091015185242)
+Migrating to AddTimestampColumns (20091016160236)
+Migrating to CreateSessions (20091020151050)
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091020151050')[0m
+Migrating to CreatePeople (20091020151057)
+  [4;36;1mSQL (5.1ms)[0m   [0;1mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `people`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `people`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `prov_xns`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `prov_xns`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `sessions`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `sessions`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+/!\ FAILSAFE /!\  Tue Oct 20 11:41:10 -0400 2009
+  Status: 500 Internal Server Error
+  /home/gregf/dev/fog/app/controllers/application_controller.rb:51: syntax error
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_file'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:379:in `load_file'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:80:in `const_missing'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:92:in `const_missing'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:101:in `dispatch_cgi'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:27:in `dispatch'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:159:in `process_client'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `each'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `process_client'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `initialize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `new'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `initialize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `new'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/bin/mongrel_rails:19:in `load'
+    /usr/bin/mongrel_rails:19
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+/!\ FAILSAFE /!\  Tue Oct 20 11:41:25 -0400 2009
+  Status: 500 Internal Server Error
+  /home/gregf/dev/fog/app/controllers/application_controller.rb:51: syntax error
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_file'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:379:in `load_file'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:80:in `const_missing'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:92:in `const_missing'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:101:in `dispatch_cgi'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:27:in `dispatch'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:159:in `process_client'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `each'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `process_client'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `initialize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `new'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `initialize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `new'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/bin/mongrel_rails:19:in `load'
+    /usr/bin/mongrel_rails:19
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+/!\ FAILSAFE /!\  Tue Oct 20 11:47:42 -0400 2009
+  Status: 500 Internal Server Error
+  /home/gregf/dev/fog/app/controllers/application_controller.rb:51: syntax error
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_file'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:379:in `load_file'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:80:in `const_missing'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:92:in `const_missing'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:101:in `dispatch_cgi'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:27:in `dispatch'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:159:in `process_client'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `each'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `process_client'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `initialize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `new'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `initialize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `new'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/bin/mongrel_rails:19:in `load'
+    /usr/bin/mongrel_rails:19
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+/!\ FAILSAFE /!\  Tue Oct 20 11:48:05 -0400 2009
+  Status: 500 Internal Server Error
+  /home/gregf/dev/fog/app/controllers/application_controller.rb:51: syntax error
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_file'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:379:in `load_file'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:80:in `const_missing'
+    /usr/lib64/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:92:in `const_missing'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib64/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:101:in `dispatch_cgi'
+    /usr/lib64/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:27:in `dispatch'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:159:in `process_client'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `each'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:158:in `process_client'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `initialize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `new'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:285:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `initialize'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `new'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel.rb:268:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/command.rb:212:in `run'
+    /usr/lib64/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/bin/mongrel_rails:19:in `load'
+    /usr/bin/mongrel_rails:19
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#show (for 10.10.25.32 at 2009-10-20 11:49:14) [GET]
+  Parameters: {"id"=>"test"}
+  [4;36;1mPerson Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Person with ID=test):
+  app/controllers/people_controller.rb:15:in `show'
+
+Rendered rescues/_trace (29.4ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 10.10.25.32 at 2009-10-20 11:49:43) [GET]
+
+ActionController::RoutingError (No route matches "/peopleb" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#index (for 10.10.25.32 at 2009-10-20 11:49:57) [GET]
+  [4;36;1mPerson Load (1.7ms)[0m   [0;1mSELECT * FROM `people` [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 23ms (View: 12, DB: 2) | 200 OK [http://automattest.nyit.edu/people]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 10.10.25.32 at 2009-10-20 11:50:05) [GET]
+  [4;35;1mSession Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 25ms (View: 13, DB: 2) | 200 OK [http://automattest.nyit.edu/sessions/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#new (for 10.10.25.32 at 2009-10-20 11:50:08) [GET]
+  [4;36;1mPerson Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (5.7ms)
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://automattest.nyit.edu/people/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#create (for 10.10.25.32 at 2009-10-20 11:50:17) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"yiJ6vq0/brT6SexXP4DGTaWmJ1jYYpR8omQCplWn8NM=", "person"=>{"name"=>"gregf", "password_confirmation"=>"scene24", "password"=>"scene24"}}
+  [4;35;1mPerson Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT `people`.id FROM `people` WHERE (`people`.`name` = BINARY 'gregf') LIMIT 1[0m
+  [4;36;1mPerson Create (1.0ms)[0m   [0;1mINSERT INTO `people` (`name`, `salt`, `encrypted_password`, `updated_at`, `created_at`) VALUES('gregf', 'PYxh1eqPgFoK', 'ce9bfd245fc125d9ea0e832dc24e75e09e5262348738e054d4166fbbd359bd3d', '2009-10-20 15:50:17', '2009-10-20 15:50:17')[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSession Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Create (0.3ms)[0m   [0;1mINSERT INTO `sessions` (`updated_at`, `person_id`, `path`, `ip_address`, `created_at`) VALUES('2009-10-20 15:50:17', 1, NULL, NULL, '2009-10-20 15:50:17')[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://automattest.nyit.edu/
+Completed in 30ms (DB: 10) | 302 Found [http://automattest.nyit.edu/people]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#index (for 10.10.25.32 at 2009-10-20 11:50:26) [GET]
+  [4;36;1mSession Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (1.7ms)[0m   [0mUPDATE `sessions` SET `ip_address` = '127.0.0.1', `path` = '/people', `updated_at` = '2009-10-20 15:50:26' WHERE `id` = 1[0m
+  [4;36;1mSQL (10.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.2ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mPerson Load (1.4ms)[0m   [0mSELECT * FROM `people` [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 119ms (View: 4, DB: 16) | 200 OK [http://automattest.nyit.edu/people]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#show (for 10.10.25.32 at 2009-10-20 11:50:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSession Columns (0.2ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (1.0ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.7ms)[0m   [0mUPDATE `sessions` SET `path` = '/people/1', `updated_at` = '2009-10-20 15:50:32' WHERE `id` = 1[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `sessions` WHERE (`sessions`.person_id = 1) [0m
+Completed in 87ms (View: 62, DB: 7) | 200 OK [http://automattest.nyit.edu/people/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#edit (for 10.10.25.32 at 2009-10-20 11:50:43) [GET]
+  Parameters: {"id"=>"account"}
+  [4;35;1mSession Columns (0.2ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.0ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.2ms)[0m   [0;1mUPDATE `sessions` SET `path` = '/people/account/edit', `updated_at` = '2009-10-20 15:50:43' WHERE `id` = 1[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (1.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (3.9ms)
+Completed in 33ms (View: 10, DB: 6) | 200 OK [http://automattest.nyit.edu/people/account/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 10.10.25.32 at 2009-10-20 11:50:52) [DELETE]
+  Parameters: {"authenticity_token"=>"yiJ6vq0/brT6SexXP4DGTaWmJ1jYYpR8omQCplWn8NM=", "id"=>"1"}
+  [4;35;1mSession Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.3ms)[0m   [0;1mUPDATE `sessions` SET `path` = '/sessions/1', `updated_at` = '2009-10-20 15:50:52' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM `sessions` WHERE `id` = 1[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://automattest.nyit.edu/
+Completed in 25ms (DB: 7) | 302 Found [http://automattest.nyit.edu/sessions/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#index (for 10.10.25.32 at 2009-10-20 11:50:58) [GET]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM `people` [0m
+Rendering template within layouts/application
+Rendering people/index
+  [4;35;1mPerson Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/people]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 10.10.25.32 at 2009-10-20 11:51:01) [GET]
+  [4;36;1mSession Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 5, DB: 2) | 200 OK [http://automattest.nyit.edu/sessions/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 10.10.25.32 at 2009-10-20 11:51:05) [POST]
+  Parameters: {"commit"=>"login", "authenticity_token"=>"yiJ6vq0/brT6SexXP4DGTaWmJ1jYYpR8omQCplWn8NM=", "session"=>{"name"=>"gregf", "password"=>"scene24"}}
+  [4;35;1mSession Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPerson Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`name` = 'gregf') LIMIT 1[0m
+  [4;35;1mSession Create (0.2ms)[0m   [0mINSERT INTO `sessions` (`updated_at`, `person_id`, `path`, `ip_address`, `created_at`) VALUES('2009-10-20 15:51:05', 1, NULL, NULL, '2009-10-20 15:51:05')[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Redirected to http://automattest.nyit.edu/
+Completed in 25ms (DB: 9) | 302 Found [http://automattest.nyit.edu/sessions]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#index (for 10.10.25.32 at 2009-10-20 11:52:05) [GET]
+  [4;36;1mSession Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.0ms)[0m   [0mUPDATE `sessions` SET `ip_address` = '127.0.0.1', `path` = '/people', `updated_at` = '2009-10-20 15:52:05' WHERE `id` = 2[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mPerson Load (0.0ms)[0m   [0mSELECT * FROM `people` [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 20ms (View: 3, DB: 6) | 200 OK [http://automattest.nyit.edu/people]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#show (for 10.10.25.32 at 2009-10-20 11:52:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSession Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Update (0.2ms)[0m   [0mUPDATE `sessions` SET `path` = '/people/1', `updated_at` = '2009-10-20 15:52:24' WHERE `id` = 2[0m
+  [4;36;1mSQL (21.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPerson Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+  [4;36;1mPerson Load (0.1ms)[0m   [0;1mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `sessions` WHERE (`sessions`.person_id = 1) [0m
+Completed in 47ms (View: 5, DB: 24) | 200 OK [http://automattest.nyit.edu/people/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#index (for 10.10.25.32 at 2009-10-20 11:59:53) [GET]
+  [4;35;1mSession Columns (0.2ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (1.0ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.0ms)[0m   [0;1mUPDATE `sessions` SET `path` = '/people', `updated_at` = '2009-10-20 15:59:53' WHERE `id` = 2[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.1ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mPerson Load (0.0ms)[0m   [0;1mSELECT * FROM `people` [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 27ms (View: 7, DB: 6) | 200 OK [http://automattest.nyit.edu/people]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 10.10.25.32 at 2009-10-20 11:59:55) [DELETE]
+  Parameters: {"authenticity_token"=>"yiJ6vq0/brT6SexXP4DGTaWmJ1jYYpR8omQCplWn8NM=", "id"=>"2"}
+  [4;35;1mSession Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Update (0.3ms)[0m   [0;1mUPDATE `sessions` SET `path` = '/sessions/2', `updated_at` = '2009-10-20 15:59:55' WHERE `id` = 2[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPerson Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `people`[0m
+  [4;35;1mPerson Load (0.2ms)[0m   [0mSELECT * FROM `people` WHERE (`people`.`id` = 1) [0m
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM `sessions` WHERE (`sessions`.`id` = 2) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM `sessions` WHERE `id` = 2[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://automattest.nyit.edu/
+Completed in 29ms (DB: 10) | 302 Found [http://automattest.nyit.edu/sessions/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeopleController#index (for 10.10.25.32 at 2009-10-20 12:00:01) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM `people` [0m
+Rendering template within layouts/application
+Rendering people/index
+  [4;35;1mPerson Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `people`[0m
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://automattest.nyit.edu/people]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 10.10.25.32 at 2009-10-20 12:00:04) [GET]
+  [4;36;1mSession Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 16ms (View: 5, DB: 3) | 200 OK [http://automattest.nyit.edu/sessions/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (5.7ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (16.2ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (9.3ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (10.2ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (9.4ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (10.2ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (9.9ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (10.8ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (13.7ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (9.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (7.2ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (16.9ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (7.6ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (11.9ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (7.6ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (23.4ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (10.2ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (20.6ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (6.2ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mDROP DATABASE IF EXISTS `fog_test`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE DATABASE `fog_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCREATE TABLE `people` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `salt` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCREATE TABLE `prov_xns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `employeenumber` varchar(255), `familyname` varchar(255), `givenname` varchar(255), `suspended` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11), `ip_address` varchar(255), `path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091020151057')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091015185242')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091016160236')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091020151050')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091015163047')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:43:15) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: 007
+ProvXn.find(): passed uid of 70033066096740
+
+NoMethodError (undefined method `empty?' for 70033066096740:Fixnum):
+  lib/provisioner_iplanet.rb:37:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (35.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:43:28) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: 007
+ProvXn.find(): passed uid of 70033064683000
+
+NoMethodError (undefined method `empty?' for 70033064683000:Fixnum):
+  lib/provisioner_iplanet.rb:37:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (41.1ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:43:54) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: 007
+ProvXn.find(): passed uid of 70033063488340
+
+NoMethodError (undefined method `empty?' for 70033063488340:Fixnum):
+  lib/provisioner_iplanet.rb:37:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (152.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:47:43) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:48:42) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (144.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:50:15) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:50:49) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:51:14) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:51:56) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (38.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:52:42) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (137.8ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:53:45) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (38.9ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:54:04) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (160.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:54:18) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:56:24) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:57:04) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.search2):
+  lib/provisioner_iplanet.rb:43:in `retrieve_user'
+  app/models/prov_xn.rb:20:in `find'
+  app/controllers/prov_xns_controller.rb:22:in `show'
+
+Rendered rescues/_trace (37.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:58:05) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afdfc388>
+Completed in 50ms (View: 4, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:58:27) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd59ca0>
+Completed in 47ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 17:58:34) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc53090>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 18:00:09) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00f1980>
+Completed in 135ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show (for 10.10.24.95 at 2009-10-20 18:00:09) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b000abe8>
+Rendering template within layouts/prov_xns
+Rendering prov_xns/show
+
+ActionView::TemplateError (edit_prov_xn_url failed to generate from {:controller=>"prov_xns", :action=>"edit", :id=>#<ProvXn id: nil, username: ["dwohlt2"], password: nil, employeenumber: ["007"], familyname: ["Test2"], givenname: ["Damien"], suspended: 1, comment: nil, created_at: nil, updated_at: nil>}, expected: {:controller=>"prov_xns", :action=>"edit"}, diff: {:id=>#<ProvXn id: nil, username: ["dwohlt2"], password: nil, employeenumber: ["007"], familyname: ["Test2"], givenname: ["Damien"], suspended: 1, comment: nil, created_at: nil, updated_at: nil>}) on line #32 of app/views/prov_xns/show.html.erb:
+29: </p>
+30: 
+31: 
+32: <%= link_to 'Edit', edit_prov_xn_path(@prov_xn) %> |
+33: <%= link_to 'Back', prov_xns_path %>
+
+    (eval):16:in `edit_prov_xn_path'
+    app/views/prov_xns/show.html.erb:32
+    app/controllers/prov_xns_controller.rb:24:in `show'
+
+Rendered rescues/_trace (53.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 18:00:37) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afbe8bc8>
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 18:00:52) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00ae388>
+Completed in 44ms (View: 1, DB: 1) | 406 Not Acceptable [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 18:01:35) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63affd2478>
+Completed in 45ms (View: 1, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 18:01:54) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afee3fa8>
+Completed in 48ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 18:01:54) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe38388>
+Completed in 42ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 18:03:04) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd9b948>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 18:03:04) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afccaf28>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (1.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 18:27:48) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afbfb700>
+Completed in 44ms (View: 1, DB: 3) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 18:27:49) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b005e748>
+Completed in 43ms (View: 0, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 18:37:31) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63aff9e128>
+Completed in 46ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 18:37:31) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afead390>
+Completed in 43ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 18:37:32) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe00e88>
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/prov_xns_controller.rb:70:in `update'
+  app/controllers/prov_xns_controller.rb:70:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (36.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 18:39:11) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00eab08>
+Completed in 140ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 18:39:11) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b0001778>
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 18:39:11) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63aff36988>
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/prov_xns_controller.rb:70:in `update'
+  app/controllers/prov_xns_controller.rb:70:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (39.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:08:39) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afcdb580>
+Completed in 50ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:08:39) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afbf7858>
+Completed in 44ms (View: 1, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:08:39) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00ad708>
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/prov_xns_controller.rb:70:in `update'
+  app/controllers/prov_xns_controller.rb:70:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:10:06) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe134c0>
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:10:06) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd7c750>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:10:06) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc8abd0>
+Completed in 42ms (View: 1, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:10:46) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afbdfed8>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:10:46) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b005cbf0>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:10:46) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63aff9d6d8>
+Completed in 41ms (View: 1, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:19:43) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afeb4578>
+Completed in 46ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:19:43) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe043a8>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:19:43) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd70a40>
+Completed in 42ms (View: 1, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:20:10) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc68f08>
+Completed in 46ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:20:10) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00e6580>
+Completed in 134ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:20:10) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b0000418>
+
+RuntimeError ():
+  app/models/prov_xn.rb:49:in `update'
+  app/controllers/prov_xns_controller.rb:70:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:21:41) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afda2590>
+Completed in 46ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:21:41) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afcc4d30>
+Completed in 43ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:21:41) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afbe5338>
+Completed in 46ms (View: 5, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:22:04) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b0088340>
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:22:04) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63affb4d10>
+Completed in 50ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:22:04) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afec6ca0>
+Completed in 44ms (View: 1, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:22:22) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe230c8>
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:22:22) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd853c8>
+Completed in 42ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:22:22) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afca2aa0>
+
+ArgumentError (interning empty string):
+  app/controllers/prov_xns_controller.rb:80:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (149.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:22:32) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe544e8>
+Completed in 46ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:22:32) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afdad508>
+Completed in 43ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:22:32) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afccff28>
+
+ArgumentError (interning empty string):
+  app/controllers/prov_xns_controller.rb:80:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (164.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:22:49) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe7f3a0>
+Completed in 48ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:22:49) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afdd7538>
+Completed in 42ms (View: 1, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:22:49) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd236c8>
+
+ArgumentError (interning empty string):
+  app/controllers/prov_xns_controller.rb:80:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (161.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:23:43) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afec01e8>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:23:43) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe0a320>
+Completed in 43ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:23:43) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd6bf68>
+
+ArgumentError (interning empty string):
+  app/controllers/prov_xns_controller.rb:80:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (173.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:24:48) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afef6900>
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:24:48) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe3f7c8>
+Completed in 42ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:24:48) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd956b0>
+
+ArgumentError (interning empty string):
+  app/controllers/prov_xns_controller.rb:81:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (164.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:25:25) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63aff57188>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:25:25) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe6da60>
+Completed in 43ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:25:25) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afdc2d18>
+Completed in 46ms (View: 5, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:25:38) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afcd3f10>
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:25:38) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc00840>
+Completed in 44ms (View: 2, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:25:39) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b0075f38>
+Completed in 47ms (View: 5, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:26:11) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63aff9c120>
+Completed in 47ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:26:11) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afeaac58>
+Completed in 42ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:26:11) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afdff3f8>
+Completed in 47ms (View: 6, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:26:42) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd45c00>
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:26:42) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc3bd50>
+Completed in 43ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:26:42) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00d87a0>
+Completed in 156ms (View: 7, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:36:35) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63affc5480>
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:36:35) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afed1790>
+Completed in 43ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:36:35) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe2a670>
+
+LoadError (Expected /home/gregf/dev/fog/lib/object_not_found_exception.rb to define ObjectNotFoundException):
+  app/models/prov_xn.rb:70:in `update'
+  app/controllers/prov_xns_controller.rb:71:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (41.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:37:22) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00dd480>
+Completed in 150ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:37:22) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63affe57d0>
+Completed in 45ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:37:23) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afeec450>
+
+LoadError (Expected /home/gregf/dev/fog/lib/object_not_found_exception.rb to define ObjectNotFoundException):
+  app/models/prov_xn.rb:72:in `update'
+  app/controllers/prov_xns_controller.rb:71:in `update'
+  app/controllers/prov_xns_controller.rb:69:in `update'
+
+Rendered rescues/_trace (40.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:37:58) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc40d50>
+Completed in 48ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:37:58) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00f16b0>
+Completed in 146ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:37:59) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b0000f58>
+Completed in 262ms (View: 1, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:39:39) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afef8908>
+Completed in 49ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:39:39) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe3bce0>
+Completed in 46ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:39:39) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd94698>
+Completed in 207ms (View: 5, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:39:58) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc5e698>
+Completed in 46ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:39:58) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afba5288>
+Completed in 142ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:39:58) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00163d0>
+Completed in 223ms (View: 5, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:41:17) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afef8ae8>
+Completed in 48ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:41:17) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe3d7e8>
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:41:17) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd8ec70>
+Completed in 226ms (View: 5, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:42:05) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc577d0>
+Completed in 46ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:42:05) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00fb4f8>
+Completed in 137ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:42:05) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00055d0>
+Completed in 206ms (View: 5, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:42:26) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afee5b00>
+Completed in 49ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:42:26) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe2ccb8>
+Completed in 43ms (View: 1, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:42:26) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd80648>
+Completed in 209ms (View: 5, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:43:15) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc491a8>
+Completed in 51ms (View: 3, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to json (for 10.10.24.95 at 2009-10-20 19:43:15) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63b00e9488>
+Completed in 146ms (View: 3, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/007.json]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:43:15) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afff5748>
+Completed in 215ms (View: 6, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:44:39) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afed4468>
+Completed in 56ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:44:39) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afe20080>
+Completed in 211ms (View: 6, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:47:48) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afd502e0>
+Completed in 47ms (View: 2, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:47:48) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7f63afc39d70>
+Completed in 209ms (View: 5, DB: 1) | 422 Unprocessable Entity [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#show to xml (for 10.10.24.95 at 2009-10-20 19:48:53) [GET]
+  Parameters: {"id"=>"007"}
+ProvXnsController.show() param id: [007]
+ProvXn.find(): passed employeenumber of 007
+  [4;36;1mProvXn Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7ff065065f88>
+Completed in 301ms (View: 6, DB: 2) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProvXnsController#update to xml (for 10.10.24.95 at 2009-10-20 19:48:53) [PUT]
+  Parameters: {"id"=>"007"}
+ProvXn.find(): passed employeenumber of 007
+  [4;35;1mProvXn Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `prov_xns`[0m
+user_iplanet: #<ProvXn:0x7ff064fb7f50>
+Completed in 964ms (View: 0, DB: 1) | 200 OK [http://automattest.nyit.edu/prov_xns/007.xml]

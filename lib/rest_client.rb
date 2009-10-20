@@ -53,7 +53,7 @@ class RestClient
     
     resp = @http.put(path, data, @headers)
     
-    puts "PUT resp: #{resp} #{resp.body}\n\n"
+    # puts "PUT resp: #{resp} #{resp.body}\n\n"
     
     return resp
     

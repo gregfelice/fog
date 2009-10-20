@@ -21,7 +21,7 @@ class ProvisionerGoogleTest < ActiveSupport::TestCase
 
     usr.password = pwd = "testpassword"
     
-    puts usr.password
+    # puts usr.password
 
     p.update_user(usr)
     

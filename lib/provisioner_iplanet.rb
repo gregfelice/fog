@@ -21,50 +21,46 @@ module Provisioner
     
     @ldapconn = nil
     
-    
     def init	
-    	  
-  	  @ldapconn = LDAP::Conn.new("ldap.nyit.edu", 389)
+      
+      @ldapconn = LDAP::Conn.new("ldap.nyit.edu", 389)
       @ldapconn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
       @ldapconn.set_option( LDAP::LDAP_OPT_SIZELIMIT, 999 )
       @ldapconn.set_option( LDAP::LDAP_OPT_TIMELIMIT, 60 )
       @ldapconn.bind("uid=portal.reset.user,ou=ServiceAccounts,o=nyit.edu,o=isp","JuZ3mE4n0w")
-
+      
     end
     
     def retrieve_user(employeenumber)
       
-      raise ArgumentError, "employeenumber blank", caller if employeenumber.empty? 
-	
-	  base = "ou=people, o=nyit.edu, o=isp"
-    scope = LDAP::LDAP_SCOPE_SUBTREE
-
-    filter = "(employeenumber=#{employeenumber})"
-    entries = @ldapconn.search2(base, scope, filter)
-
-    if entries.length == 0
-      raise ObjectNotFoundException.new(nil, "No users returned."), "No users returned."
-    elsif entries.empty?
-      raise ObjectNotFoundException.new(nil, "No users returned."), "No users returned."
-    elsif entries.length > 1
-      raise ProvisionerException.new(nil, "More than one user returned."), "More than one user returned."
-    end
-
-
-    retrievediplanetuser = entries.first
-
-    xn = ProvXn.new      
-
-    xn.username = retrievediplanetuser['uid']
-    xn.employeenumber = retrievediplanetuser['employeeNumber']
-    xn.familyname = retrievediplanetuser['sn']
-    xn.givenname = retrievediplanetuser['givenName']
-    (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userclass'].to_s == "separated") ? xn.suspended = 1 : xn.suspended = 0
-
-
-
-    return xn
-  
+      raise ArgumentError, "employeenumber blank", caller if employeenumber != nil && employeenumber.empty? 
+      
+      base = "ou=people, o=nyit.edu, o=isp"
+      scope = LDAP::LDAP_SCOPE_SUBTREE
+      
+      filter = "(employeenumber=#{employeenumber})"
+      entries = @ldapconn.search2(base, scope, filter)
+      
+      if entries.length == 0
+        raise ObjectNotFoundException.new(nil, "No users returned."), "No users returned."
+      elsif entries.empty?
+        raise ObjectNotFoundException.new(nil, "No users returned."), "No users returned."
+      elsif entries.length > 1
+        raise ProvisionerException.new(nil, "More than one user returned."), "More than one user returned."
+      end
+      
+      retrievediplanetuser = entries.first
+      
+      xn = ProvXn.new      
+      
+      xn.username = retrievediplanetuser['uid']
+      xn.employeenumber = retrievediplanetuser['employeeNumber']
+      xn.familyname = retrievediplanetuser['sn']
+      xn.givenname = retrievediplanetuser['givenName']
+      (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userclass'].to_s == "separated") ? xn.suspended = 1 : xn.suspended = 0
+      
+      return xn
+      
     end
     
     def create_user(user)
@@ -82,9 +78,9 @@ module Provisioner
     #
     def update_user(provxn)
       
-      raise ArgumentError, "malformed user", caller if olduser == nil || newuser == nil
+      # raise ArgumentError, "malformed user", caller if olduser == nil || newuser == nil
 
-      raise ArgumentError, "password is nil", caller if provxn.password == nil
+      # raise ArgumentError, "password is nil", caller if provxn.password == nil
 
       #  
       # 

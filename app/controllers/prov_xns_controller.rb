@@ -15,7 +15,7 @@ class ProvXnsController < ApplicationController
   # GET /prov_xns/1.xml
   def show
 
-    logger.debug("ProvXnsController.show() param id: #{params[:id]}")
+    logger.debug("ProvXnsController.show() param id: [#{params[:id]}]")
     
     # logger.debug("loadpath : #{$LOAD_PATH}")
 
@@ -24,6 +24,7 @@ class ProvXnsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @prov_xn }
+      format.json  { render :json => @prov_xn }
     end
   end
 
@@ -66,14 +67,20 @@ class ProvXnsController < ApplicationController
     @prov_xn = ProvXn.find(params[:id])
 
     respond_to do |format|
-      if @prov_xn.update_attributes(params[:prov_xn])
+
+      if @prov_xn.update
+        
         flash[:notice] = 'ProvXn was successfully updated.'
         format.html { redirect_to(@prov_xn) }
         format.xml  { head :ok }
+        
       else
+        
         format.html { render :action => "edit" }
         format.xml  { render :xml => @prov_xn.errors, :status => :unprocessable_entity }
+
       end
+
     end
   end
 

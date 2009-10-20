@@ -57,10 +57,10 @@ module Provisioner
       
       feed.elements.each('entry') do |entry|
         
-        puts 'name: ' + entry.elements['apps:name'].text
-        #puts 'type: ' + entry.elements['category'].attribute('label').value
-        #puts 'updated: ' + entry.elements['updated'].text
-        #puts 'id: ' + entry.elements['id'].text
+        # puts 'name: ' + entry.elements['apps:name'].text
+        # puts 'type: ' + entry.elements['category'].attribute('label').value
+        # puts 'updated: ' + entry.elements['updated'].text
+        # puts 'id: ' + entry.elements['id'].text
         
         # Extract the href value from each <atom:link>
         links = {}
@@ -153,7 +153,7 @@ EOF
       </atom:entry>
 EOF
       
-      puts "XML: #{xml}"
+      # puts "XML: #{xml}"
       
       xmldoc = Document.new(xml)
       
