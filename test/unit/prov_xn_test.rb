@@ -1,56 +1,15 @@
-
+require 'ldap'
 require 'test_helper'
+require 'provisioner_iplanet'
+require 'provisioner_google'
+
 
 #
 # need an imap client to test this
 #
 class ProvXnTest < ActiveSupport::TestCase
 
-  def test_provisioner_google
-
-    p = Provisioner::ProvisionerGoogle.new
-    p.init
-    
-    usr = p.retrieve_user("btest")
-    
-    assert_provxn usr
-    
-    #usr.password = pwd = "passwd-#{(Time.now.usec).to_s}"
-
-    usr.password = pwd = "testpassword"
-    
-    puts usr.password
-
-    p.update_user(usr)
-    
-    usr = p.retrieve_user("btest")
-    
-    assert_provxn usr
-
-  end
-  
-=begin  
-  def test_provisioner_iplanet
-    
-    p = Provisioner::ProvisionerIplanet.new
-    p.init
- 
-    usr = p.retrieve_user("12371928679182347") # employeeid
-    
-    assert_provxn usr
-
-    usr.password = pwd = "testpassword"
-    
-    # puts usr.password
-
-    p.update_user(usr)
-    
-    usr = p.retrieve_user("29387198273123")
-    
-    assert_provxn usr
-
-  end
-
+=begin 
   def test_provisioner_ad
 
   end
