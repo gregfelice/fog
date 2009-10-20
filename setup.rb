@@ -1,0 +1,2 @@
+
+export RUBYLIB=.:./lib:./test

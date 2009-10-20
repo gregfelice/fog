@@ -1,18 +1,10 @@
+
 require 'test_helper'
 
 #
 # need an imap client to test this
 #
 class ProvXnTest < ActiveSupport::TestCase
-
-  # Replace this with your real tests.
-
-  test "the truth" do
-
-    assert true
-
-  end
-  
 
   def test_provisioner_google
 
@@ -36,7 +28,8 @@ class ProvXnTest < ActiveSupport::TestCase
     assert_provxn usr
 
   end
-
+  
+=begin  
   def test_provisioner_iplanet
     
     p = Provisioner::ProvisionerIplanet.new
@@ -88,7 +81,8 @@ class ProvXnTest < ActiveSupport::TestCase
     assert_provxn usr
     
   end
-  
+=end
+
   private 
 
   def assert_provxn(usr)

@@ -1,7 +1,4 @@
 
-require 'net/http'
-require 'net/https'
-require 'uri'
 
 require 'provisioner_interface'
 require 'provisioner_exception'
@@ -12,6 +9,8 @@ require 'util'
 require 'rexml/document'
 
 include REXML # so we don't have to preface everything with REXML
+
+require 'rest_client'
 
 =begin
 
@@ -24,42 +23,33 @@ http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html
 =end
 module Provisioner
 
+  @rest_client = nil
+
   class ProvisionerGoogle < ProvisionerInterface
-    
-    @http = nil
-    @headers = nil
     
     public
     
     def init
       
-      http = Net::HTTP.new('www.google.com', 443)
-      
-      http.use_ssl = true
-      
-      path = '/accounts/ClientLogin'
-      
-      headers = {'content-type' => 'application/x-www-form-urlencoded'}
-      
+      ath_rest = RestClient.new('www.google.com', 443, {'content-type' => 'application/x-www-form-urlencoded'})
+
       data = { 'Email' => 'nyitadmin@nyit.edu', 'Passwd' => 'G00gely!', 'accountType' => 'HOSTED_OR_GOOGLE', 'service' => 'apps' }
       
-      resp = http.post(path, Util.hash_to_querystring(data), headers)
+      ath_resp = ath_rest.POST('/accounts/ClientLogin', Util.hash_to_querystring(data))
       
-      ath_token = resp.body.chomp.grep(/Auth=/)
+      ath_token = ath_resp.body.chomp.grep(/Auth=/)
       
       atz_header = "GoogleLogin #{ath_token}"
       
-      @headers = { 'authorization' => atz_header, 'content-type' => 'application/atom+xml' } 
+      headers = { 'authorization' => atz_header, 'content-type' => 'application/atom+xml' } 
       
-      @http = Net::HTTP.new('apps-apis.google.com', 443)
-      
-      @http.use_ssl = true
+      @rest_client = RestClient.new('apps-apis.google.com',443, headers)
       
     end
     
     def retrieve_users_all
       
-      resp = GET('/a/feeds/nyit.edu/user/2.0')
+      resp = @rest_client.GET('/a/feeds/nyit.edu/user/2.0')
       
       feed = Document.new(resp)
       
@@ -90,7 +80,7 @@ module Provisioner
 
       raise ArgumentError, "username blank", caller if username.empty? 
 
-      resp = GET("/a/feeds/nyit.edu/user/2.0/#{username}")
+      resp = @rest_client.GET("/a/feeds/nyit.edu/user/2.0/#{username}")
       
       feed = Document.new(resp)
       
@@ -140,7 +130,7 @@ EOF
       
       xmldoc = Document.new(xml)
       
-      resp = POST(path, xmldoc.to_s)
+      resp = @rest_client.POST(path, xmldoc.to_s)
       
     end
     
@@ -167,7 +157,7 @@ EOF
       
       xmldoc = Document.new(xml)
       
-      resp = PUT(path, xmldoc.to_s)
+      resp = @rest_client.PUT(path, xmldoc.to_s)
       
     end
     
@@ -177,50 +167,7 @@ EOF
 
       path = "/a/feeds/nyit.edu/user/2.0/#{user.username}"
       
-      resp = DELETE(path)
-      
-    end
-    
-
-    private
-    
-    def GET(path)
-      
-      resp = @http.get(path, @headers).body
-      
-      #logger.debug("GET resp: #{resp}\n\n")
-      
-      return resp
-      
-    end
-    
-    def POST(path, xmldoc)
-      
-      resp = @http.post(path, xmldoc, @headers)
-      
-      #puts "POST resp: #{resp} #{resp.body}\n\n"
-      
-      return resp
-      
-    end
-    
-    def PUT(path, xmldoc)
-      
-      resp = @http.put(path, xmldoc, @headers)
-      
-      puts "PUT resp: #{resp} #{resp.body}\n\n"
-      
-      return resp
-      
-    end
-    
-    def DELETE(path)
-      
-      resp = @http.delete(path, @headers)
-      
-      #puts "DELETE resp: #{resp} #{resp.body}\n\n"
-      
-      return resp
+      resp = @rest_client.DELETE(path)
       
     end
     
