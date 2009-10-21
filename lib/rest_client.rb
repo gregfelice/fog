@@ -26,14 +26,15 @@ class RestClient
 
   end
 
-
   def GET(path)
     
-    resp = @http.get(path, @headers).body
+    resp = @http.get(path, @headers)
+
+    #puts "GET resp: #{resp}\n\n"
     
-    #logger.debug("GET resp: #{resp}\n\n")
+    #resp.each_header { |x| puts x }
     
-    return resp
+    return resp.body
     
   end
   

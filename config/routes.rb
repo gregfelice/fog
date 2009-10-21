@@ -1,10 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.resources :prov_xns
 
-  map.resources :sessions
-  map.resources :people
-
-  map.root :controller => 'people'
+  map.connect 'accounts/login', :controller => 'accounts', :action => 'login'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

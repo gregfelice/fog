@@ -106,3 +106,25 @@ on ip2 now, moving to automat
 
 
 
+ok - 
+   
+   prov_user
+   username
+   password
+
+   prov_session
+   ip
+   path
+   session_key
+
+
+valid for a specific time
+
+
+POST /accounts/login
+
+
+username = 
+password = 
+service = prov_xn
+
