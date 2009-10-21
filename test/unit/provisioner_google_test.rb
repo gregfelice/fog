@@ -8,7 +8,18 @@ require 'provisioner_google'
 #
 class ProvisionerGoogleTest < ActiveSupport::TestCase
 
-  def test_provisioner_google
+  def test_retrieve
+
+    p = Provisioner::ProvisionerGoogle.new
+    p.init
+    
+    usr = p.retrieve_user("btest")
+    
+    assert_provxn usr
+
+  end
+  
+  def test_update
 
     p = Provisioner::ProvisionerGoogle.new
     p.init
@@ -30,8 +41,8 @@ class ProvisionerGoogleTest < ActiveSupport::TestCase
     assert_provxn usr
 
   end
-  
-   private 
+    
+  private 
 
   def assert_provxn(usr)
 

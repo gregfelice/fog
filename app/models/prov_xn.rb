@@ -60,17 +60,11 @@ class ProvXn < ActiveRecord::Base
       return true
       
     rescue Provisioner::ObjectNotFoundException
-      
       self.errors.add("Update: ObjectNotFoundException: " + $!)
-      
       return false
-      
     rescue
-      
       self.errors.add("Update: Unhandled Exception: " + $!)
-      
       return false
-
     end
         
   end

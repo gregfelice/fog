@@ -11,6 +11,8 @@ class ProvXnTest < ActiveSupport::TestCase
     
     client = RestClient.new('automattest.nyit.edu', 80, {'content-type' => 'application/atom+xml'})
     
+    assert_not_nil client
+
     resp = client.GET("/prov_xns/007.xml")    
 
     assert_not_nil resp
@@ -24,6 +26,8 @@ class ProvXnTest < ActiveSupport::TestCase
   def test_fog_update
     
     client = RestClient.new('automattest.nyit.edu', 80, {'content-type' => 'application/atom+xml'})
+
+    assert_not_nil client
     
     employeenumber = "007"
     password = "roobyrat"

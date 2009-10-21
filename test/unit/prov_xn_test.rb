@@ -1,55 +1,33 @@
-require 'ldap'
-require 'test_helper'
-require 'provisioner_iplanet'
-require 'provisioner_google'
 
+require 'test_helper'
 
 #
 # need an imap client to test this
 #
 class ProvXnTest < ActiveSupport::TestCase
 
-=begin 
-  def test_provisioner_ad
-
-  end
-
-  test "provxn retrieval" do
+  def test_find 
     
-    usr = ProvXn.find("btest")
+    usr = ProvXn.find("007")
     
-    assert_provxn usr
+    assert_not_nil usr.employeenumber
+    assert_not_nil usr.username
     
   end
-
-  test "provxn update" do
+  
+  def test_update
     
     usr = ProvXn.new
-
+    
     assert_not_nil usr
         
-    usr.username = "btest"
+    usr.username = "007"
     usr.password = "testpassword"
     
     usr.update
     
-    assert_provxn usr
-    
-    usr = ProvXn.find("btest")
+    # @todo implement an IMAP client to really test that the password change here worked for google.
 
-    assert_provxn usr
-    
   end
-=end
 
-  private 
-
-  def assert_provxn(usr)
-
-    assert_not_nil usr
-
-    assert_not_nil usr.username
-  
-  end
-  
 end
