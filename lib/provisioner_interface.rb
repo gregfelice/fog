@@ -1,5 +1,8 @@
+require 'provisioner_exception'
 
 module Provisioner
+
+  class SuspendedUserException < ProvisionerException; end
 
   class ProvisionerInterface
     

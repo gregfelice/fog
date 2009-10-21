@@ -55,6 +55,28 @@ class ProvXnTest < ActiveSupport::TestCase
 
 
 
+
+  def test_password_change
+    
+    p = Provisioner::ProvisionerIplanet.new    
+    
+    assert_not_nil p
+    
+    p.init
+    
+    testuser = ProvXn.new
+    testuser.employeenumber = "0010"
+    testuser.password = "kvetch"
+    
+    usr = p.update_user(testuser) # employeeid
+
+  end
+
+
+
+
+
+
   
 private 
   
