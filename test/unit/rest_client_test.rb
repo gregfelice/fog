@@ -13,7 +13,7 @@ class ProvXnTest < ActiveSupport::TestCase
     
     assert_not_nil client
 
-    resp = client.GET("/prov_xns/007.xml")    
+    resp = client.GET("/prov_xns/0010.xml")    
 
     assert_not_nil resp
 
@@ -29,7 +29,7 @@ class ProvXnTest < ActiveSupport::TestCase
 
     assert_not_nil client
     
-    employeenumber = "007"
+    employeenumber = "0010"
     password = "roobyrat"
     
     xml = <<EOF    
