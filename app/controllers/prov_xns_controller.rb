@@ -1,5 +1,8 @@
 class ProvXnsController < ApplicationController
 
+  before_filter :ensure_login, :only => [:new, :update, :show]
+  #before_filter :ensure_logout, :only => [:new, :create]
+
   # GET /prov_xns
   # GET /prov_xns.xml
   def index

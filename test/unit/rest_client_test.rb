@@ -1,6 +1,7 @@
 
 require 'test_helper'
 require 'rest_client'
+require 'util'
 
 #
 # 
@@ -9,15 +10,15 @@ class ProvXnTest < ActiveSupport::TestCase
 
   def test_fog_retrieve
     
-    client = RestClient.new('automattest.nyit.edu', 80, {'content-type' => 'application/atom+xml'})
+    client = RestClient.new('automattest.nyit.edu', 443, {'content-type' => 'application/x-www-form-urlencoded'})
+
+    data = { 'username' => 'btest', 'password' => 'password', 'service' => 'prov_xn' }
+
+    resp = client.POST("/accounts/login", Util.hash_to_querystring(data))
     
-    assert_not_nil client
-
-    resp = client.GET("/prov_xns/007.xml")    
-
-    assert_not_nil resp
-
-    puts resp
+    puts resp.inspect
+    
+    # should contain an auth hash that has an expiration timestamp.
     
   end
 
@@ -29,7 +30,7 @@ class ProvXnTest < ActiveSupport::TestCase
 
     assert_not_nil client
     
-    employeenumber = "007"
+    employeenumber = "0010"
     password = "roobyrat"
     
     xml = <<EOF    
@@ -47,6 +48,20 @@ class ProvXnTest < ActiveSupport::TestCase
 EOF
     
     resp = client.PUT("/prov_xns/007.xml", xml)    
+    puts resp
+
+  end
+
+  def test_ath
+    
+    client = RestClient.new('automattest.nyit.edu', 443, {'content-type' => 'application/x-www-form-urlencoded'})
+
+    resp = client.GET("/sessions/new.xml")
+
+    data = { 'session_name' => 'test-session', 'session_password' => 'password' }
+
+    resp = client.POST("/sessions/create.xml", Util.hash_to_querystring(data))
+    
     puts resp
 
   end
