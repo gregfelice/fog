@@ -153,11 +153,13 @@ EOF
       </atom:entry>
 EOF
       
-      # puts "XML: #{xml}"
+      puts "update_user XML: #{xml}"
       
       xmldoc = Document.new(xml)
       
       resp = @rest_client.PUT(path, xmldoc.to_s)
+
+      puts "update user google response: #{resp.body}"
       
     end
     

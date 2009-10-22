@@ -1,13 +1,13 @@
 class ProvXnsController < ApplicationController
 
-  before_filter :ensure_login, :only => [:new, :update, :show]
+  #before_filter :ensure_login, :only => [:new, :update, :show]
   #before_filter :ensure_logout, :only => [:new, :create]
 
   # GET /prov_xns
   # GET /prov_xns.xml
   def index
     @prov_xns = ProvXn.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @prov_xns }
@@ -18,16 +18,12 @@ class ProvXnsController < ApplicationController
   # GET /prov_xns/1.xml
   def show
 
-    logger.debug("ProvXnsController.show() param id: [#{params[:id]}]")
-    
-    # logger.debug("loadpath : #{$LOAD_PATH}")
-
     @prov_xn = ProvXn.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @prov_xn }
-      format.json  { render :json => @prov_xn }
+      # format.json  { render :json => @prov_xn }
     end
   end
 
@@ -70,20 +66,28 @@ class ProvXnsController < ApplicationController
     @prov_xn = ProvXn.find(params[:id])
 
     respond_to do |format|
-
-      if @prov_xn.update
+      
+      do 
         
-        flash[:notice] = 'ProvXn was successfully updated.'
-        format.html { redirect_to(@prov_xn) }
-        format.xml  { head :ok }
+        if @prov_xn.update
+          
+          flash[:notice] = 'ProvXn was successfully updated.'
+          format.html { redirect_to(@prov_xn) }
+          format.xml  { head :ok }
+          
+        else
+          
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @prov_xn.errors, :status => :unprocessable_entity }
+          
+        end
         
-      else
+      rescue # serious error... 
         
         format.html { render :action => "edit" }
         format.xml  { render :xml => @prov_xn.errors, :status => :unprocessable_entity }
-
+        
       end
-
     end
   end
 

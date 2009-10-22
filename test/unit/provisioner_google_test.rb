@@ -1,5 +1,6 @@
 
 require 'test_helper'
+require 'net/imap'
 
 require 'provisioner_google'
 
@@ -8,14 +9,17 @@ require 'provisioner_google'
 #
 class ProvisionerGoogleTest < ActiveSupport::TestCase
 
+  USERNAME = "btest"
+  PASSWORD = "provgoogtest"
+  
   def test_retrieve
 
     p = Provisioner::ProvisionerGoogle.new
     p.init
     
-    usr = p.retrieve_user("btest")
+    usr = p.retrieve_user(USERNAME)
     
-    assert_provxn usr
+    assert_equal (USERNAME, usr.username)
 
   end
   
@@ -24,32 +28,17 @@ class ProvisionerGoogleTest < ActiveSupport::TestCase
     p = Provisioner::ProvisionerGoogle.new
     p.init
     
-    usr = p.retrieve_user("btest")
-    
-    assert_provxn usr
-    
-    #usr.password = pwd = "passwd-#{(Time.now.usec).to_s}"
-
-    usr.password = pwd = "testpassword"
-    
-    # puts usr.password
+    usr = p.retrieve_user(USERNAME)
+    usr.password = PASSWORD
 
     p.update_user(usr)
     
-    usr = p.retrieve_user("btest")
+    # test the password change by logging into IMAP
+    assert_nothing_raised(Net::IMAP::NoResponseError) { 
+      imap = Net::IMAP.new('imap.gmail.com', 993, true)
+      imap.login("#{USERNAME}@nyit.edu", "#{PASSWORD}")    
+    }
     
-    assert_provxn usr
-
-  end
-    
-  private 
-
-  def assert_provxn(usr)
-
-    assert_not_nil usr
-
-    assert_not_nil usr.username
-  
   end
   
 end

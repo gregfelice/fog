@@ -2,72 +2,64 @@
 require 'test_helper'
 require 'rest_client'
 require 'util'
+require 'net/imap'
 
 #
 # 
 #
 class ProvXnTest < ActiveSupport::TestCase
 
+  EMPLOYEENUMBER = "0010"
+  USERNAME = "btest"
+  PASSWORD = "kvetch"
+
   def test_fog_retrieve
     
-    client = RestClient.new('automattest.nyit.edu', 443, {'content-type' => 'application/x-www-form-urlencoded'})
-
-    data = { 'username' => 'btest', 'password' => 'password', 'service' => 'prov_xn' }
-
-    resp = client.POST("/accounts/login", Util.hash_to_querystring(data))
+    client = RestClient.new('automattest.nyit.edu', 80, {'content-type' => 'application/atom+xml'})
     
-    puts resp.inspect
+    resp = client.GET("/prov_xns/#{EMPLOYEENUMBER}.xml")    
     
-    # should contain an auth hash that has an expiration timestamp.
+    assert_not_nil resp
+    
+    # check to see if the correct values were actually returned
     
   end
-
+  
   # PUT /prov_xns/1
   # PUT /prov_xns/1.xml
   def test_fog_update
     
+    puts USERNAME
+    puts PASSWORD
+
     client = RestClient.new('automattest.nyit.edu', 80, {'content-type' => 'application/atom+xml'})
 
     assert_not_nil client
-    
-    employeenumber = "0010"
-    password = "roobyrat"
     
     xml = <<EOF    
 <prov-xn>
   <comment nil="true"/>
   <created-at nil="true" type="datetime"/>
-  <employeenumber>#{employeenumber}</employeenumber>
+  <employeenumber>#{EMPLOYEENUMBER}</employeenumber>
   <familyname nil="true"/>
   <givenname nil="true"/>
-  <password>#{password}</password>
+  <password>#{PASSWORD}</password>
   <suspended nil="true"/>
   <updated-at nil="true" type="datetime"/>
   <username nil="true"/>
 </prov-xn>
 EOF
     
-    resp = client.PUT("/prov_xns/007.xml", xml)    
-    puts resp
+    resp = client.PUT("/prov_xns/#{EMPLOYEENUMBER}.xml", xml)    
 
-  end
-
-  def test_ath
+    # test the password change by logging into IMAP
+    assert_nothing_raised(Net::IMAP::NoResponseError) { 
+      imap = Net::IMAP.new('imap.gmail.com', 993, true)
+      imap.login("#{USERNAME}@nyit.edu", "#{PASSWORD}")    
+    }
     
-    client = RestClient.new('automattest.nyit.edu', 443, {'content-type' => 'application/x-www-form-urlencoded'})
-
-    resp = client.GET("/sessions/new.xml")
-
-    data = { 'session_name' => 'test-session', 'session_password' => 'password' }
-
-    resp = client.POST("/sessions/create.xml", Util.hash_to_querystring(data))
-    
-    puts resp
-
   end
   
 end
 
 
-
-      
