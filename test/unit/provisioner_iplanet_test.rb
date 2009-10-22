@@ -1,13 +1,12 @@
 require 'ldap'
 require 'test_helper'
 require 'provisioner_iplanet'
-require 'provisioner_google'
 
 
 #
 # need an imap client to test this
 #
-class ProvXnTest < ActiveSupport::TestCase
+class ProvisionerIplanetTest < ActiveSupport::TestCase
   
   def test_retrieve_invalid_user
     
@@ -47,6 +46,8 @@ class ProvXnTest < ActiveSupport::TestCase
     p.init
     
     usr = p.retrieve_user("007") # employeeid
+
+    puts usr
     
     assert_provxn usr
 

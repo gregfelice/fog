@@ -16,15 +16,13 @@ module Provisioner
     
     def init	
     	  
-  	  @ldapconn = LDAP::Conn.new("ldap1.nyit.edu", 389)
+      @ldapconn = LDAP::Conn.new("ldap1.nyit.edu", 389)
       @ldapconn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
       @ldapconn.set_option( LDAP::LDAP_OPT_SIZELIMIT, 999 )
       @ldapconn.set_option( LDAP::LDAP_OPT_TIMELIMIT, 60 )
       @ldapconn.bind("uid=portal.reset.user,ou=ServiceAccounts,o=nyit.edu,o=isp","JuZ3mE4n0w")
-
+      
     end
-
-
 
     def retrieve_ldap_attributes(employeenumber)
   
@@ -49,9 +47,6 @@ module Provisioner
     end
     
     private :retrieve_ldap_attributes
-
-
-
     
     def retrieve_user(employeenumber)
       
@@ -59,21 +54,20 @@ module Provisioner
 	
       retrievediplanetuser = retrieve_ldap_attributes(employeenumber)
 
-	    xn = ProvXn.new      
+      xn = ProvXn.new      
       xn.username = retrievediplanetuser['uid'].to_s
       xn.employeenumber = retrievediplanetuser['employeeNumber'].to_s
       xn.familyname = retrievediplanetuser['sn'].to_s
       xn.givenname = retrievediplanetuser['givenName'].to_s
+
+      xn.userclass = retrievediplanetuser['userClass'].to_s
+      xn.mailhost = retrievediplanetuser['mailHost'].to_s
+
       (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userclass'].to_s == "separated") ? xn.suspended = 1 : xn.suspended = 0
 
       return xn
   
     end
-    
-    
-    
-    
-    
     
     def create_user(user)
       
@@ -83,28 +77,18 @@ module Provisioner
       
     end
 
-
-
-
-
-
-
-
-
-
-    
     #
     # preconditions: provxn has employeeid and password, and user is not disabled
     #
     # postconditions: user's password is updated in iplanet
     #
     def update_user(provxn)
-    
+      
       raise ArgumentError, "Password is empty.", caller if provxn.password == nil 
       raise ArgumentError, "Employeenumber is empty.", caller if provxn.employeenumber == nil 
 
       retrievediplanetuser = retrieve_ldap_attributes(provxn.employeenumber)
-
+      
       if (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userclass'].to_s == "separated")
         raise Provisioner::SuspendedUserException.new(nil, "User is suspended."), "User is suspended."
       end
@@ -113,21 +97,8 @@ module Provisioner
       modifieduserattrs['userpassword'] = [provxn.password]
     
       @ldapconn.modify(retrievediplanetuser['dn'].to_s, modifieduserattrs)
-    
       
     end
-
-
-
-
-
-
-
-
-
-
-
-
     
     def delete_user(user) 
       
@@ -136,8 +107,5 @@ module Provisioner
     end
     
   end
-  
-  
-  
   
 end # module

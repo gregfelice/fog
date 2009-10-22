@@ -17,7 +17,7 @@ class ProvXn < ActiveRecord::Base
 
     raise ArgumentError, "employeenumber blank", caller if self.employeenumber.empty? 
 
-    do
+    begin
       
       # try iplanet first
       p = Provisioner::ProvisionerIplanet.new
@@ -52,7 +52,7 @@ class ProvXn < ActiveRecord::Base
     raise ArgumentError, "username blank", caller if self.username.empty? 
     raise ArgumentError, "password blank", caller if self.password.empty? 
     
-    do 
+    begin
       p_iplanet = Provisioner::ProvisionerIplanet.new
       p_iplanet.init
     rescue
@@ -64,7 +64,7 @@ class ProvXn < ActiveRecord::Base
     # usr 1 --> 1 mailhost
     
     # retrieve usr from iplanet --  if not found, exit/fail
-    do 
+    begin
       usr = p_iplanet.retrieve_user(self.employeenumber)
     rescue Provisioner::ObjectNotFoundException
       logger.error("{caller} object not found for emp no: [#{employeenumber}] Exception: #{$!}")
@@ -75,7 +75,7 @@ class ProvXn < ActiveRecord::Base
       raise
     end
     
-    do 
+    begin
       # if usr.mailhost is mymailg.nyit.edu then update iplanet && google
       if usr.mailhost == "mymailg.nyit.edu"
         

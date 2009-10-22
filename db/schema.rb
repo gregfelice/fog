@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091022173431) do
+ActiveRecord::Schema.define(:version => 20091022190806) do
 
   create_table "prov_sessions", :force => true do |t|
     t.integer  "prov_user_id"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20091022173431) do
     t.datetime "updated_at"
     t.string   "userclass"
     t.string   "mailhost"
+    t.string   "iplanetdn"
+    t.string   "adadmindn"
   end
 
 end
