@@ -1,4 +1,4 @@
-require 'ldap'
+
 require 'test_helper'
 require 'provisioner_iplanet'
 
@@ -47,7 +47,7 @@ class ProvisionerIplanetTest < ActiveSupport::TestCase
     
     usr = p.retrieve_user("007") # employeeid
 
-    puts usr
+    #puts usr
     
     assert_provxn usr
 
@@ -79,7 +79,7 @@ class ProvisionerIplanetTest < ActiveSupport::TestCase
 
 
   
-private 
+  private 
   
   def assert_provxn(usr)
     

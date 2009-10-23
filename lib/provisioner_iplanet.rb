@@ -59,14 +59,16 @@ module Provisioner
       xn.employeenumber = retrievediplanetuser['employeeNumber'].to_s
       xn.familyname = retrievediplanetuser['sn'].to_s
       xn.givenname = retrievediplanetuser['givenName'].to_s
-
       xn.userclass = retrievediplanetuser['userClass'].to_s
       xn.mailhost = retrievediplanetuser['mailHost'].to_s
-
+      # @todo add more attributes here, if any
+      # @todo add more attributes here, if any
+      # @todo add more attributes here, if any
+      
       (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userclass'].to_s == "separated") ? xn.suspended = 1 : xn.suspended = 0
-
+      
       return xn
-  
+      
     end
     
     def create_user(user)
@@ -74,28 +76,26 @@ module Provisioner
       raise ArgumentError, "user nil or username blank", caller if user == nil || user.username.empty? 
       
       #
-      
     end
-
-    #
-    # preconditions: provxn has employeeid and password, and user is not disabled
-    #
-    # postconditions: user's password is updated in iplanet
-    #
-    def update_user(provxn)
+    
+    def update_user_attributes(attributes)
       
-      raise ArgumentError, "Password is empty.", caller if provxn.password == nil 
-      raise ArgumentError, "Employeenumber is empty.", caller if provxn.employeenumber == nil 
+      puts "provisioner_iplanet.update user attributes: #{attributes.inspect}"
 
-      retrievediplanetuser = retrieve_ldap_attributes(provxn.employeenumber)
+      retrievediplanetuser = retrieve_ldap_attributes(attributes['employeenumber'])
       
       if (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userclass'].to_s == "separated")
         raise Provisioner::SuspendedUserException.new(nil, "User is suspended."), "User is suspended."
       end
-
+      
       modifieduserattrs = Hash.new
-      modifieduserattrs['userpassword'] = [provxn.password]
-    
+      
+      modifieduserattrs['userpassword'] = [ attributes['password'] ]
+      # attributes now coming off of the hash argument instead of provxn object
+      # @todo add more attributes here
+      # @todo add more attributes here
+      # @todo add more attributes here
+      
       @ldapconn.modify(retrievediplanetuser['dn'].to_s, modifieduserattrs)
       
     end
@@ -106,6 +106,41 @@ module Provisioner
       
     end
     
+    
+    #
+    # preconditions: provxn has employeeid and password, and user is not disabled
+    #
+    # postconditions: user's password is updated in iplanet
+    #
+    def update_user(provxn)
+      
+      raise ArgumentError, "Password is empty.", caller if provxn.password == nil 
+      raise ArgumentError, "Employeenumber is empty.", caller if provxn.employeenumber == nil 
+      
+      attributes = { "username" => provxn.username, "password" => provxn.password}
+      
+      update_user_attributes(attributes)
+      
+    end
+
   end
-  
 end # module
+
+
+=begin
+<prov-xn>
+<adadmindn nil="true"/>
+<comment nil="true"/>
+<created-at nil="true" type="datetime"/>
+<employeenumber nil="true"/>
+<familyname nil="true"/>
+<givenname nil="true"/>
+<iplanetdn nil="true"/>
+<mailhost nil="true"/>
+<password nil="true"/>
+<suspended nil="true"/>
+<updated-at nil="true" type="datetime"/>
+<userclass nil="true"/>
+<username nil="true"/>
+</prov-xn>      
+=end

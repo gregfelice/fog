@@ -136,31 +136,42 @@ EOF
     
     # current implementation only updates password field
     def update_user(provxn)
-      
+
       raise ArgumentError, "malformed user", caller if provxn == nil
 
-      path = "/a/feeds/nyit.edu/user/2.0/#{provxn.username}"
+      attributes = { "username" => provxn.username, "password" => provxn.password }
+
+      update_user_attributes(attributes)
+      
+    end
+
+    #
+    # currently only supports changes to password.
+    #
+    def update_user_attributes(attributes)
+      
+      path = "/a/feeds/nyit.edu/user/2.0/#{ attributes['username'] }"
       
       xml = <<EOF
       <?xml version="1.0" encoding="UTF-8"?>
 
       <atom:entry xmlns:atom="http://www.w3.org/2005/Atom" xmlns:apps="http://schemas.google.com/apps/2006" xmlns:gd="http://schemas.google.com/g/2005">
 
-        <atom:id>https://apps-apis.google.com/a/feeds/nyit.edu/user/2.0/#{provxn.username}</atom:id>
+        <atom:id>https://apps-apis.google.com/a/feeds/nyit.edu/user/2.0/#{ attributes['username'] }</atom:id>
 
-        <apps:login userName="#{provxn.username}" password="#{provxn.password}" suspended="false" admin="false" changePasswordAtNextLogin="false" agreedToTerms="true"/>
+        <apps:login userName="#{ attributes['username'] }" password="#{ attributes['password'] }" suspended="false" admin="false" changePasswordAtNextLogin="false" agreedToTerms="true"/>
 
       </atom:entry>
 EOF
       
-      puts "update_user XML: #{xml}"
+      #puts "update_user XML: #{xml}"
       
       xmldoc = Document.new(xml)
       
       resp = @rest_client.PUT(path, xmldoc.to_s)
 
-      puts "update user google response: #{resp.body}"
-      
+      #puts "update user google response: #{resp.body}"
+
     end
     
     def delete_user(user) 

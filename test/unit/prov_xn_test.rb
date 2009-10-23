@@ -11,6 +11,15 @@ class ProvXnTest < ActiveSupport::TestCase
   PASSWORD = "provxntest"
   EMPLOYEENUMBER = "0010"
 
+  def test_update_attributes
+
+    attributes = { "username" => "testusername", "password" => "testpassword" }
+
+    usr = ProvXn.new
+    usr.update_attributes(attributes)
+
+  end
+
   def test_find 
     
     usr = ProvXn.find(EMPLOYEENUMBER)
@@ -20,19 +29,14 @@ class ProvXnTest < ActiveSupport::TestCase
     
   end
   
-  def test_update
+  def test_update_attributes
     
-    usr = ProvXn.new
+    xn = ProvXn.new
     
-    usr.employeenumber = EMPLOYEENUMBER
-    usr.password = PASSWORD
+    attributes = {"employeenumber" => EMPLOYEENUMBER, "password" => PASSWORD }
     
-    puts usr.inspect
-
-    usr.update
+    xn.update_attributes(attributes)
     
-    puts usr.errors.inspect
-
     # test the password change by logging into IMAP
     assert_nothing_raised(Net::IMAP::NoResponseError) { 
       imap = Net::IMAP.new('imap.gmail.com', 993, true)

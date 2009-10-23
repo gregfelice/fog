@@ -3,8 +3,15 @@ require 'net/http'
 require 'net/https'
 require 'uri'
 
+########################################################################################################
 #
+# RESTful client support. has been tested with the following mime-types:
 #
+# application/x-www-form-urlencoded              (basic http post, get)
+# application/atom+xml                           (google gdata api conversations via http)
+# application/atom+xml                           (ruby on rails controller conversations via http)
+# 
+#######################################################################################################
 class RestClient
 
   attr :headers
@@ -52,9 +59,11 @@ class RestClient
   
   def PUT(path, data)
     
+    # puts "-------------------------\nPUT: data: #{data} -- #{@headers}"
+
     resp = @http.put(path, data, @headers)
     
-    # puts "PUT resp: #{resp} #{resp.body}\n\n"
+    #puts "PUT resp: [#{resp}] [#{resp.body}]\n----------------------\n\n"
     
     return resp
     

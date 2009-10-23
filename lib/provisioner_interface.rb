@@ -6,22 +6,25 @@ module Provisioner
 
   class ProvisionerInterface
     
-    def create_user()
+    def create_user(prov_xn)
       raise NotImplementedError
     end
     
-    def retrieve_user(user_name)
+    def retrieve_user(employeenumber)
       raise NotImplementedError
     end
     
-    def update_user()
+    def update_user(prov_xn)
       raise NotImplementedError
     end
-    
-    def delete_user(user_name) 
-      raise NotImplementedError
-    end
-    
-  end
 
+    def update_user_attributes(attributes)
+      raise NotImplementedError
+    end
+    
+    def delete_user(employeenumber) 
+      raise NotImplementedError
+    end
+
+  end
 end

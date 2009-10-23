@@ -128,3 +128,13 @@ username =
 password = 
 service = prov_xn
 
+
+
+
+XML parameter handling:
+
+actioncontroller.base
+  @@param_parsers = {}
+    cattr_accessor :param_parsers
+
+~/ext/rails/vendor/rails/actionpack/lib/action_controller/

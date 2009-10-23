@@ -1,8 +1,5 @@
 class ProvXnsController < ApplicationController
 
-  #before_filter :ensure_login, :only => [:new, :update, :show]
-  #before_filter :ensure_logout, :only => [:new, :create]
-
   # GET /prov_xns
   # GET /prov_xns.xml
   def index
@@ -17,16 +14,14 @@ class ProvXnsController < ApplicationController
   # GET /prov_xns/1
   # GET /prov_xns/1.xml
   def show
-
     @prov_xn = ProvXn.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @prov_xn }
-      # format.json  { render :json => @prov_xn }
     end
   end
-
+  
   # GET /prov_xns/new
   # GET /prov_xns/new.xml
   def new
@@ -64,30 +59,28 @@ class ProvXnsController < ApplicationController
   # PUT /prov_xns/1.xml
   def update
     @prov_xn = ProvXn.find(params[:id])
+    
+    logger.debug "PROVXN: #{@prov_xn.inspect}"
+    logger.debug "PARAMS: #{params[:prov_xn]}"
+    logger.debug "ID: #{params[:id]}"
 
     respond_to do |format|
-      
-      do 
-        
-        if @prov_xn.update
-          
+      #begin
+        #if @prov_xn.update
+        if @prov_xn.update_attributes(params[:prov_xn])
           flash[:notice] = 'ProvXn was successfully updated.'
           format.html { redirect_to(@prov_xn) }
           format.xml  { head :ok }
-          
         else
-          
+          logger.error($!)
           format.html { render :action => "edit" }
           format.xml  { render :xml => @prov_xn.errors, :status => :unprocessable_entity }
-          
         end
-        
-      rescue # serious error... 
-        
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @prov_xn.errors, :status => :unprocessable_entity }
-        
-      end
+      #rescue 
+      #  logger.error($!)
+      #  format.html { render :action => "edit" }
+      #  format.xml  { render :xml => @prov_xn.errors, :status => :unprocessable_entity }
+      #end
     end
   end
 
