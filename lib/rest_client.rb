@@ -4,13 +4,20 @@ require 'net/https'
 require 'uri'
 
 ########################################################################################################
-#
-# RESTful client support. has been tested with the following mime-types:
-#
-# application/x-www-form-urlencoded              (basic http post, get)
-# application/atom+xml                           (google gdata api conversations via http)
-# application/atom+xml                           (ruby on rails controller conversations via http)
-# 
+=begin
+
+RESTful client support. has been tested with the following mime-types:
+application/x-www-form-urlencoded              (basic http post, get)
+application/atom+xml                           (google gdata api conversations via http)
+application/atom+xml                           (ruby on rails controller conversations via http)
+
+@todo
+
+add support for authentication.. not sure if i need to do anything outside include the auth headers...
+
+yeah, with inititalization accepting headers, could just pass that in.
+
+=end
 #######################################################################################################
 class RestClient
 
@@ -32,9 +39,16 @@ class RestClient
     end
 
   end
+  
+  def basic_auth(username, password)
 
+    headers.merge!( { 'authorization' => Base64.encode64("#{username}:#{password}") } )
+
+  end
+
+  # chopped up method to support basic auth
   def GET(path)
-    
+
     resp = @http.get(path, @headers)
 
     #puts "GET resp: #{resp}\n\n"

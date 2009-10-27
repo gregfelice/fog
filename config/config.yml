@@ -1,0 +1,17 @@
+development:
+  perform-authentication: true
+  username: gregf
+  password: password
+  allowed-hosts: 10.10.24.95, 10.10.24.25
+
+test:
+  perform-authentication: true
+  username: gregf
+  password: password
+  allowed-hosts: 10.10.24.95, 10.10.24.25
+
+production:
+  perform-authentication: true
+  username: gregf
+  password: password
+  allowed-hosts: 10.10.24.95, 10.10.24.25

@@ -1,5 +1,9 @@
 class ProvXnsController < ApplicationController
 
+  USER_NAME, PASSWORD = "gregf", "password"
+
+  before_filter :authenticate
+
   # GET /prov_xns
   # GET /prov_xns.xml
   def index
@@ -95,4 +99,23 @@ class ProvXnsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  protected
+  
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      _authenticate(username, password, request.remote_ip)
+    end
+  end
+
+  def _authenticate(username, password, ip) 
+    
+    if APP_CONFIG['perform-authentication']
+      return username == APP_CONFIG['username'] && password == APP_CONFIG['password'] && APP_CONFIG['allowed-hosts'] =~ /#{ip}/
+    else
+      return true
+    end
+
+  end
+
 end

@@ -5,6 +5,17 @@ require 'provisioner_iplanet'
 require 'object_not_found_exception'
 
 class ProvXn < ActiveRecord::Base
+  
+  attr :username
+  attr :employeenumber
+  attr :password
+  attr :suspended
+
+  def initialize(employeenumber, username, password)
+    @employeenumber = employeenumber
+    @username = username
+    @password = password
+  end
 
   #
   # staff/faculty will be in ldap AND ad

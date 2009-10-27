@@ -45,7 +45,7 @@ class ProvisionerIplanetTest < ActiveSupport::TestCase
     
     p.init
     
-    usr = p.retrieve_user("007") # employeeid
+    usr = p.retrieve_user("0012") # employeeid
 
     #puts usr
     

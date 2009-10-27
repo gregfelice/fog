@@ -1,18 +1,53 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+fog_thor_student_bad_password:
+ employeenumber: 0011
+ username: fog.thor.student
+ password: password
+ suspended: 0
 
-one:
-  username: mystring	
-  password: mystring
-  employeenumber: mystring
-  familyname: mystring
-  givenname: mystring
-  suspended: mystring
+fog_thor_student_bad_employee_number:
+ employeenumber: *&(@#&(!@#*(
+ username: fog.thor.student
+ password: password
+ suspended: 0
 
-two:
-  username: mystring	
-  password: mystring
-  employeenumber: mystring
-  familyname: mystring
-  givenname: mystring
-  suspended: mystring
+fog_thor_student_nonexistent:
+ employeenumber: 9999
+ username: fog.thor.student
+ password: password
+ suspended: 0
 
+fog_thor_student:
+ employeenumber: 0011
+ username: fog.thor.student
+ password: password
+ suspended: 0
+
+fog_gmail_student:
+ employeenumber: 0012
+ username: fog.gmail.student
+ password: password
+ suspended: 0
+
+fog_owexht_student:
+ employeenumber: 0013 
+ username: fog.owexht.student
+ password: password
+ suspended: 0
+
+fog_owexht_staff:
+ employeenumber: 0014 
+ username: fog.owexht.staff
+ password: password
+ suspended: 0
+
+fog_thor_staff:
+ employeenumber: 0015 
+ username: fog.thor.staff
+ password: password
+ suspended: 0
+
+fog_thor_staff_susp:
+ employeenumber: 0016 
+ username: fog.thor.staff.susp
+ password: password
+ suspended: 1
