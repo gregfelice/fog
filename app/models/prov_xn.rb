@@ -6,17 +6,6 @@ require 'object_not_found_exception'
 
 class ProvXn < ActiveRecord::Base
   
-  attr :username
-  attr :employeenumber
-  attr :password
-  attr :suspended
-
-  def initialize(employeenumber, username, password)
-    @employeenumber = employeenumber
-    @username = username
-    @password = password
-  end
-
   #
   # staff/faculty will be in ldap AND ad
   # students will be in ldap AND google.
@@ -35,7 +24,7 @@ class ProvXn < ActiveRecord::Base
       p.init
       usr = p.retrieve_user(employeenumber)
       
-    rescue ObjectNotFoundException
+    rescue Provisioner::ObjectNotFoundException
       logger.info("{caller} object not found for emp no: [#{employeenumber}] Exception: #{$!}")
       raise
     rescue
@@ -51,9 +40,13 @@ class ProvXn < ActiveRecord::Base
     raise NotImplementedError
   end
 
+  def validate
+    errors.add_on_empty %w( employeenumber password )
+  end
+
   # override
   def update_attributes(attributes)
-    
+
     #logger.debug "updateattributes --------------------------------------------------------------------------------------------"
     #logger.debug attributes
     #logger.debug attributes.class
@@ -62,6 +55,8 @@ class ProvXn < ActiveRecord::Base
     
     raise ArgumentError, "employeenumber blank", caller if attributes['employeenumber'] == nil || attributes['employeenumber'].empty? 
     raise ArgumentError, "password blank", caller if attributes['password'] == nil || attributes['password'].empty? 
+
+    validate
     
     begin
       p_iplanet = Provisioner::ProvisionerIplanet.new
@@ -111,20 +106,20 @@ class ProvXn < ActiveRecord::Base
         
         p_iplanet.update_user_attributes(attributes) 
 
-        #p_adadmin = Provisioner::ProvisionerADAdmin.new
-        #p_adadmin.init
+        p_adadmin = Provisioner::ProvisionerADAdmin.new
+        p_adadmin.init
         
-        #p_adadmin.update_user_attributes(attributes)
+        p_adadmin.update_user_attributes(attributes)
         
       end
       
       # if usr.mailhost is thor && userclass is (faculty || staff) then update adadmin
       if usr.mailhost == "thor.nyit.edu" && (usr.userclass == "faculty" || usr.userclass == "staff")
         
-        #p_adadmin = Provisioner::ProvisionerADAdmin.new
-        #p_adadmin.init
+        p_adadmin = Provisioner::ProvisionerADAdmin.new
+        p_adadmin.init
         
-        #p_adadmin.update_user_attributes(attributes)
+        p_adadmin.update_user_attributes(attributes)
         
       end
 

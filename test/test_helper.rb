@@ -35,4 +35,31 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def validate_iplanet(dn, password)
+    
+    raise ArgumentError, "dn is nil", caller if dn == nil
+    raise ArgumentError, "password is nil", caller if password == nil
+
+    
+    @ldapconn = LDAP::Conn.new("ldap1.nyit.edu", 389)
+    @ldapconn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
+    @ldapconn.set_option( LDAP::LDAP_OPT_SIZELIMIT, 999 )
+    @ldapconn.set_option( LDAP::LDAP_OPT_TIMELIMIT, 60 )
+    @ldapconn.bind(dn, password)
+  end
+  
+  def validate_adadmin(dn, password)
+    @ldapconn = LDAP::SSLConn.new("owdc2-srv.nyit.edu", 636)
+    @ldapconn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
+    @ldapconn.set_option( LDAP::LDAP_OPT_SIZELIMIT, 999 )
+    @ldapconn.set_option( LDAP::LDAP_OPT_TIMELIMIT, 60 )
+    @ldapconn.set_option( LDAP::LDAP_OPT_REFERRALS, 0 )
+    @ldapconn.bind(dn, password)
+  end
+
+  def validate_google(username, password)
+    imap = Net::IMAP.new('imap.gmail.com', 993, true)
+    imap.login("#{username}@nyit.edu", password)
+  end
+
 end
