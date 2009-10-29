@@ -22,6 +22,7 @@ suspended 0
     usr.password = 'password'
     usr.iplanetdn = 'uid=fog.thor.student, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
+	usr.suspended = 0
     return usr
   end
 
@@ -47,6 +48,7 @@ suspended 0
     usr.password = 'kvetch'
     usr.iplanetdn = 'uid=fog.gmail.student, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
+	usr.suspended = 0
     return usr
   end
 
@@ -72,7 +74,8 @@ suspended 0
     usr.password = '12hi3u12hiuc3ho1iud'
     usr.iplanetdn = 'uid=fog.thor.student, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
-    return usr
+    usr.suspended = 0
+	return usr
   end
   
 =begin
@@ -97,7 +100,8 @@ suspended 0
     usr.password = 'password'
     usr.iplanetdn = 'uid=fog.thor.student, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
-    return usr
+    usr.suspended = 0
+	return usr
   end
   
 =begin
@@ -122,7 +126,8 @@ suspended 0
     usr.password = 'password'
     usr.iplanetdn = 'uid=fog.thor.student, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
-    return usr
+    usr.suspended = 0
+	return usr
   end
   
 =begin
@@ -134,8 +139,8 @@ username fog.owexht.staff
 password password
 userclass staff
 mailhost owexht.nyit.edu
-adadmindn cn=fog owexht.staff, ... @todo damien
-iplanetdn uid=fog.owexht.staffjsmith30, ou=people, o=nyit.edu, o=isp
+adadmindn CN=fog owexht staff,OU=Temporary_Accounts,OU=Users,OU=Admin_Unit,DC=admin,DC=nyit,DC=edu
+iplanetdn uid=fog.owexht.staff, ou=people, o=nyit.edu, o=isp
 familyname owexht.staff
 givenname fog
 suspended 0
@@ -145,9 +150,10 @@ suspended 0
     usr.employeenumber = '0013'
     usr.username = 'fog.owexht.staff'
     usr.password = 'password'
-    usr.iplanetdn = 'uid=fog.owexht.staffjsmith30, ou=people, o=nyit.edu, o=isp'
-    usr.adadmindn = nil
-    return usr
+    usr.iplanetdn = 'uid=fog.owexht.staff, ou=people, o=nyit.edu, o=isp'
+    usr.adadmindn = 'CN=fog owexht staff,OU=Temporary_Accounts,OU=Users,OU=Admin_Unit,DC=admin,DC=nyit,DC=edu'
+    usr.suspended = 0
+	return usr
   end  
 
 =begin
@@ -172,7 +178,8 @@ suspended 0
     usr.password = 'password'
     usr.iplanetdn = 'uid=fog.thor.staff, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
-    return usr
+    usr.suspended = 0
+	return usr
   end
 
 =begin
@@ -198,7 +205,8 @@ suspended 1
     usr.suspended = '1'
     usr.iplanetdn = 'uid=fog.thor.staff.susp, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
-    return usr
+    usr.suspended = 1
+	return usr
   end
 
 end

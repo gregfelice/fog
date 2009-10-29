@@ -25,8 +25,11 @@ module Provisioner
       
     end
     
-    def retrieve_ldap_attributes(employeenumber)
+
+    def retrieve_user(employeenumber)
       
+      raise ArgumentError, "employeenumber blank", caller if employeenumber.empty? 
+	
       base = "dc=admin,dc=nyit,dc=edu"
       scope = LDAP::LDAP_SCOPE_SUBTREE
       
@@ -41,25 +44,15 @@ module Provisioner
         raise ProvisionerException.new(nil, "More than one user returned."), "More than one user returned."
       end
 
-      retrievedadadminuser = entries.first
-  
-      return retrievedadadminuser
-  
-    end
-    
-    private :retrieve_ldap_attributes
-    
-    def retrieve_user(employeenumber)
-      
-      raise ArgumentError, "employeenumber blank", caller if employeenumber.empty? 
-	
-      retrievedadadminuser = retrieve_ldap_attributes(employeenumber)
+	  
+	  retrievedadadminuser = entries.first
       
       xn = ProvXn.new      
       xn.username = retrievedadadminuser['sAMAccountName'].to_s
       xn.employeenumber = retrievedadadminuser['employeeID'].to_s
       xn.familyname = retrievedadadminuser['sn'].to_s
       xn.givenname = retrievedadadminuser['givenName'].to_s
+	  xn.adadmindn = retrievedadadminuser['distinguishedName'].to_s
       !(retrievedadadminuser['userAccountControl'].to_s == "512") ? xn.suspended = 1 : xn.suspended = 0
       
       return xn
@@ -79,14 +72,15 @@ module Provisioner
     #
     # postconditions: user's password is updated in iplanet
     #
-    def update_user(provxn)
+    def update_user_attributes(attributes)
       
-      raise ArgumentError, "Password is empty.", caller if provxn.password == nil 
-      raise ArgumentError, "Employeenumber is empty.", caller if provxn.employeenumber == nil 
+      raise ArgumentError, "Password is empty.", caller if attributes['password'] == nil 
+      raise ArgumentError, "Employeenumber is empty.", caller if attributes['employeenumber'] == nil 
 
-      retrievedadadminuser = retrieve_ldap_attributes(provxn.employeenumber)
+      retrievedadadminuser = retrieve_user(attributes['employeenumber'])
 
-      if !(retrievedadadminuser['userAccountControl'].to_s == "512")
+		
+	  if !(retrievedadadminuser['suspended'] == 0)
         raise Provisioner::SuspendedUserException.new(nil, "User is suspended."), "User is suspended."
       end
 
@@ -97,15 +91,36 @@ module Provisioner
         return unicodepwd
       end
       
-      unicodepassword = ct2uni(provxn.password)
+      unicodepassword = ct2uni(attributes['password'])
       
       modifieduserattrs = Hash.new
       modifieduserattrs['unicodePwd'] = [unicodepassword]
     
-      @ldapconn.modify(retrievedadadminuser['dn'].to_s, modifieduserattrs)
+      @ldapconn.modify(retrievedadadminuser['adadmindn'].to_s, modifieduserattrs)
     
     end
 
+	
+	
+	 def update_user(provxn)
+      
+      raise ArgumentError, "Password is empty.", caller if provxn.password == nil 
+      raise ArgumentError, "Employeenumber is empty.", caller if provxn.employeenumber == nil 
+      
+      attributes = { "employeenumber" => provxn.employeenumber, "password" => provxn.password}
+      
+      update_user_attributes(attributes)
+      
+    end
+	
+	
+	
+	
+	
+	
+	
+	
+	
     def delete_user(user) 
       
       raise ArgumentError, "user nil or username blank", caller if user == nil || user.username.empty? 

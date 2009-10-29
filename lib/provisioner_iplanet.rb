@@ -1,4 +1,4 @@
-
+# test 3
 require 'ldap'
 
 require 'provisioner_interface'
@@ -24,9 +24,13 @@ module Provisioner
       
     end
 
-    def retrieve_ldap_attributes(employeenumber)
-  
-      base = "ou=people, o=nyit.edu, o=isp"
+    
+    def retrieve_user(employeenumber)
+      
+      raise ArgumentError, "employeenumber blank", caller if employeenumber.empty? 
+	
+	
+	  base = "ou=people, o=nyit.edu, o=isp"
       scope = LDAP::LDAP_SCOPE_SUBTREE
 
       filter = "(employeenumber=#{employeenumber})"
@@ -39,20 +43,8 @@ module Provisioner
       elsif entries.length > 1
         raise ProvisionerException.new(nil, "More than one user returned."), "More than one user returned."
       end
-
-      retrievediplanetuser = entries.first
-  
-      return retrievediplanetuser
-  
-    end
-    
-    private :retrieve_ldap_attributes
-    
-    def retrieve_user(employeenumber)
-      
-      raise ArgumentError, "employeenumber blank", caller if employeenumber.empty? 
 	
-      retrievediplanetuser = retrieve_ldap_attributes(employeenumber)
+	  retrievediplanetuser = entries.first
 
       xn = ProvXn.new      
       xn.username = retrievediplanetuser['uid'].to_s
@@ -61,11 +53,10 @@ module Provisioner
       xn.givenname = retrievediplanetuser['givenName'].to_s
       xn.userclass = retrievediplanetuser['userClass'].to_s
       xn.mailhost = retrievediplanetuser['mailHost'].to_s
-      # @todo add more attributes here, if any
-      # @todo add more attributes here, if any
-      # @todo add more attributes here, if any
-      
-      (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userclass'].to_s == "separated") ? xn.suspended = 1 : xn.suspended = 0
+	  xn.iplanetdn = retrievediplanetuser['dn'].to_s
+	    
+      	  
+      (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userClass'].to_s == "separated") ? xn.suspended = 1 : xn.suspended = 0
       
       return xn
       
@@ -80,23 +71,22 @@ module Provisioner
     
     def update_user_attributes(attributes)
       
-      puts "provisioner_iplanet.update user attributes: #{attributes.inspect}"
+      raise ArgumentError, "Password is empty.", caller if attributes['password'] == nil
+      raise ArgumentError, "Employeenumber is empty.", caller if attributes['employeenumber'] == nil
 
-      retrievediplanetuser = retrieve_ldap_attributes(attributes['employeenumber'])
+
+      retrievediplanetuser = retrieve_user(attributes['employeenumber'])
       
-      if (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userclass'].to_s == "separated")
+		  
+      if (retrievediplanetuser['inetUserStatus'].to_s == "inactive" || retrievediplanetuser['userClass'].to_s == "separated")
         raise Provisioner::SuspendedUserException.new(nil, "User is suspended."), "User is suspended."
       end
       
       modifieduserattrs = Hash.new
       
-      modifieduserattrs['userpassword'] = [ attributes['password'] ]
-      # attributes now coming off of the hash argument instead of provxn object
-      # @todo add more attributes here
-      # @todo add more attributes here
-      # @todo add more attributes here
-      
-      @ldapconn.modify(retrievediplanetuser['dn'].to_s, modifieduserattrs)
+      modifieduserattrs['userPassword'] = [ attributes['password'] ]
+       
+      @ldapconn.modify(retrievediplanetuser['iplanetdn'].to_s, modifieduserattrs)
       
     end
     
@@ -117,7 +107,7 @@ module Provisioner
       raise ArgumentError, "Password is empty.", caller if provxn.password == nil 
       raise ArgumentError, "Employeenumber is empty.", caller if provxn.employeenumber == nil 
       
-      attributes = { "username" => provxn.username, "password" => provxn.password}
+      attributes = { "employeenumber" => provxn.employeenumber, "password" => provxn.password}
       
       update_user_attributes(attributes)
       

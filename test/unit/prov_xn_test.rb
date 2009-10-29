@@ -63,8 +63,13 @@ class ProvXnTest < ActiveSupport::TestCase
   def test_retrieve_fog_gmail_student
     mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
-    assert_usr usr, mockusr
-
+    #assert_usr usr, mockusr
+	puts mockusr.iplanetdn.inspect
+	puts
+	puts usr.iplanetdn.inspect
+	puts
+	assert_equal usr.iplanetdn, mockusr.iplanetdn
+	assert_usr usr,mockusr
   end
 
   def test_retrieve_fog_thor_student
@@ -76,7 +81,7 @@ class ProvXnTest < ActiveSupport::TestCase
   # validaiton should prevent badly formed passwords
   # check for bad chars, too long, too short
   def test_update_fog_thor_student_bad_password
-    mockusr = ProvisionerMock.get_fog_thor_student
+    mockusr = ProvisionerMock.get_fog_thor_student_bad_password
     usr = ProvXn.find(mockusr.employeenumber)
     assert_raise(Provisioner::SOMEUNNAMEDEXCEPTIONRELATEDTOVALIDATION) {
       # update the password
@@ -85,69 +90,69 @@ class ProvXnTest < ActiveSupport::TestCase
   end
   
   def test_update_fog_thor_student_bad_employee_number
-    mockusr = ProvisionerMock.get_fog_thor_student
+    mockusr = ProvisionerMock.get_fog_thor_student_bad_employee_number
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
     usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpassword' } )
     # validate via mailhost in question
     validate_iplanet(usr.iplanetdn, 'newpassword')
     # change back to old password
-    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => usr.password } )
+    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
   end
   
   def test_update_fog_owexht_student
-    mockusr = ProvisionerMock.get_fog_thor_student
+    mockusr = ProvisionerMock.get_fog_owexht_student
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
     usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpassword' } )
     # validate via mailhost in question
     validate_iplanet(usr.iplanetdn, 'newpassword')
     # change back to old password
-    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => usr.password } )
+    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
   end
   
   def test_update_fog_owexht_staff
-    mockusr = ProvisionerMock.get_fog_thor_student
+    mockusr = ProvisionerMock.get_fog_owexht_staff
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
     usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpassword' } )
     # validate via mailhost in question
     validate_iplanet(usr.iplanetdn, 'newpassword')
     # change back to old password
-    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => usr.password } )
+    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
   end
   
   def test_update_fog_thor_staff
-    mockusr = ProvisionerMock.get_fog_thor_student
+    mockusr = ProvisionerMock.get_fog_thor_staff
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
     usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpassword' } )
     # validate via mailhost in question
     validate_iplanet(usr.iplanetdn, 'newpassword')
     # change back to old password
-    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => usr.password } )
+    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
   end
   
   def test_update_fog_thor_staff_susp
-    mockusr = ProvisionerMock.get_fog_thor_student
+    mockusr = ProvisionerMock.get_fog_thor_staff_susp
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
     usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpassword' } )
     # validate via mailhost in question
     validate_iplanet(usr.iplanetdn, 'newpassword')
     # change back to old password
-    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => usr.password } )
+    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
   end
 
   def test_update_fog_gmail_student
-    mockusr = ProvisionerMock.get_fog_thor_student
+    mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
     usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpassword' } )
     # validate via mailhost in question
     validate_iplanet(usr.iplanetdn, 'newpassword')
     # change back to old password
-    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => usr.password } )
+    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
   end
 
   def test_update_fog_thor_student
@@ -158,7 +163,7 @@ class ProvXnTest < ActiveSupport::TestCase
     # validate via mailhost in question
     validate_iplanet(usr.iplanetdn, 'newpassword')
     # change back to old password
-    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => usr.password } )
+    usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
   end
 
   ##############################################################
@@ -178,11 +183,11 @@ class ProvXnTest < ActiveSupport::TestCase
   end
 
   def assert_usr(usr, mockusr)
-    assert_equal usr.employeenumber, mockusr.employeenumber
+	assert_equal usr.employeenumber, mockusr.employeenumber
     assert_equal usr.username, mockusr.username
     assert_nil usr.password
     assert_equal usr.iplanetdn, mockusr.iplanetdn
-    assert_equal usr.adadmindn, mockusr.adadmindn
+	assert_equal usr.adadmindn, mockusr.adadmindn
     assert_equal usr.suspended, mockusr.suspended
   end
 
