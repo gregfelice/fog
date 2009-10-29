@@ -3,7 +3,6 @@ require 'ldap'
 
 require 'provisioner_interface'
 require 'provisioner_exception'
-require 'object_not_found_exception'
 
 =begin
 
@@ -37,9 +36,9 @@ module Provisioner
       entries = @ldapconn.search2(base, scope, filter) 
       
       if entries.length == 0
-        raise ObjectNotFoundException.new(nil, "No users returned."), "No users returned."
+        raise ActiveRecord::RecordNotFound
       elsif entries.empty?
-       raise ObjectNotFoundException.new(nil, "No users returned."), "No users returned."
+       raise ActiveRecord::RecordNotFound
       elsif entries.length > 1
         raise ProvisionerException.new(nil, "More than one user returned."), "More than one user returned."
       end

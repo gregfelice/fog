@@ -2,13 +2,13 @@ development:
   perform-authentication: true
   username: gregf
   password: password
-  allowed-hosts: 10.10.24.95, 10.10.24.25
+  allowed-hosts: 10.10.24.95, 10.10.25.32
 
 test:
   perform-authentication: true
   username: gregf
   password: password
-  allowed-hosts: 10.10.24.95, 10.10.24.25
+  allowed-hosts: 10.10.24.95, 10.10.25.32
 
 production:
   perform-authentication: true

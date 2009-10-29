@@ -15,7 +15,7 @@ class ProvisionerIplanetTest < ActiveSupport::TestCase
     assert_not_nil p
     p.init
 
-    assert_raise(Provisioner::ObjectNotFoundException){
+    assert_raise(ActiveRecord::RecordNotFound){
       usr = p.retrieve_user("invalidnumber") # employeeid
       }
     
@@ -29,7 +29,7 @@ class ProvisionerIplanetTest < ActiveSupport::TestCase
     assert_not_nil p
     p.init
 
-    assert_raise(Provisioner::ProvisionerException){
+    assert_raise(Provisoner::ProvisionerException){
       usr = p.retrieve_user("0314981") # employeeid
       }
     

@@ -17,9 +17,9 @@ class ProvXnTest < ActiveSupport::TestCase
     assert_not_nil p
     p.init
 
-    assert_raise(Provisioner::ObjectNotFoundException){
+    assert_raise(ActiveRecord::RecordNotFound){
       usr = p.retrieve_user("invalidnumber") # employeeid
-      }
+    }
     
   end
 

@@ -19,7 +19,7 @@ class RestClientTest < ActiveSupport::TestCase
   
   def test_retrieve
     resp = get('0012')
-    puts resp
+    #puts resp
   end
 
   def test_retrieve_failed

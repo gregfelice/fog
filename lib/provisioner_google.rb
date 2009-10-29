@@ -1,16 +1,11 @@
 
-
 require 'provisioner_interface'
 require 'provisioner_exception'
-require 'object_not_found_exception'
-
 require 'util'
-
 require 'rexml/document'
+require 'rest_client'
 
 include REXML # so we don't have to preface everything with REXML
-
-require 'rest_client'
 
 =begin
 
@@ -102,7 +97,7 @@ module Provisioner
       reason = feed.elements["//AppsForYourDomainErrors/error"].attributes["reason"]
       
       if error_code == '1301'
-        raise ObjectNotFoundException.new(error_code, reason), "object not found"
+        raise ActiveRecord::RecordNotFound
       else 
         raise ProvisionerException.new(error_code, reason), "unhandled error"
       end

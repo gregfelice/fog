@@ -22,7 +22,7 @@ suspended 0
     usr.password = 'password'
     usr.iplanetdn = 'uid=fog.thor.student, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
-	usr.suspended = 0
+    usr.suspended = 0
     return usr
   end
 
@@ -48,34 +48,8 @@ suspended 0
     usr.password = 'kvetch'
     usr.iplanetdn = 'uid=fog.gmail.student, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
-	usr.suspended = 0
-    return usr
-  end
-
-=begin
-
-. student w/email in thor (fog.thor.student)
-
-employeenumber 0011
-username fog.thor.student
-password password
-userclass student
-mailhost thor.nyit.edu
-adadmindn na
-iplanetdn uid=fog.thor.student, ou=people, o=nyit.edu, o=isp
-familyname thor.student
-givenname fog
-suspended 0 
-=end
-  def self.get_fog_thor_student_bad_password
-    usr = ProvXn.new
-    usr.employeenumber = '0011'
-    usr.username = 'fog.thor.student'
-    usr.password = '12hi3u12hiuc3ho1iud'
-    usr.iplanetdn = 'uid=fog.thor.student, ou=people, o=nyit.edu, o=isp'
-    usr.adadmindn = nil
     usr.suspended = 0
-	return usr
+    return usr
   end
   
 =begin
@@ -101,7 +75,7 @@ suspended 0
     usr.iplanetdn = 'uid=fog.thor.student, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
     usr.suspended = 0
-	return usr
+    return usr
   end
   
 =begin
@@ -127,7 +101,7 @@ suspended 0
     usr.iplanetdn = 'uid=fog.thor.student, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
     usr.suspended = 0
-	return usr
+    return usr
   end
   
 =begin
@@ -153,7 +127,7 @@ suspended 0
     usr.iplanetdn = 'uid=fog.owexht.staff, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = 'CN=fog owexht staff,OU=Temporary_Accounts,OU=Users,OU=Admin_Unit,DC=admin,DC=nyit,DC=edu'
     usr.suspended = 0
-	return usr
+    return usr
   end  
 
 =begin
@@ -179,7 +153,7 @@ suspended 0
     usr.iplanetdn = 'uid=fog.thor.staff, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
     usr.suspended = 0
-	return usr
+    return usr
   end
 
 =begin
@@ -206,7 +180,7 @@ suspended 1
     usr.iplanetdn = 'uid=fog.thor.staff.susp, ou=people, o=nyit.edu, o=isp'
     usr.adadmindn = nil
     usr.suspended = 1
-	return usr
+    return usr
   end
 
 end

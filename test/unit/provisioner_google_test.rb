@@ -15,11 +15,11 @@ class ProvisionerGoogleTest < ActiveSupport::TestCase
     
     usr = ProvisionerMock.get_fog_gmail_student
     
-    puts usr.inspect
+    #puts usr.inspect
 
-    puts usr.username
-    puts usr.password
-    puts usr.employeenumber
+    #puts usr.username
+    #puts usr.password
+    #puts usr.employeenumber
 
     p = Provisioner::ProvisionerGoogle.new
     p.init

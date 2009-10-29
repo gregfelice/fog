@@ -2,7 +2,6 @@
 require 'provisioner_google'
 require 'provisioner_adadmin'
 require 'provisioner_iplanet'
-require 'object_not_found_exception'
 
 class ProvXn < ActiveRecord::Base
   
@@ -14,50 +13,37 @@ class ProvXn < ActiveRecord::Base
   # dump: https://nyitfu.nyit.edu/userfu/dump_ldap.php?search=gfelice
   #
   def self.find(employeenumber)
-
     raise ArgumentError, "employeenumber blank", caller if employeenumber.empty? 
-
     begin
-      
       # try iplanet first
       p = Provisioner::ProvisionerIplanet.new
       p.init
       usr = p.retrieve_user(employeenumber)
-      
-    rescue Provisioner::ObjectNotFoundException
+    rescue ActiveRecord::RecordNotFound
       logger.info("{caller} object not found for emp no: [#{employeenumber}] Exception: #{$!}")
       raise
     rescue
       logger.error("{caller} unexplained error Exception: #{$!}")
       raise # re-raises last exception
     end
-    
     return usr
   end
-
+  
   # override
   def save
     raise NotImplementedError
   end
-
-  def validate
-    errors.add_on_empty %w( employeenumber password )
-  end
-
+  
   # override
   def update_attributes(attributes)
 
-    #logger.debug "updateattributes --------------------------------------------------------------------------------------------"
-    #logger.debug attributes
-    #logger.debug attributes.class
-    #logger.debug attributes.inspect
-    #logger.debug "end updateattributes ----------------------------------------------------------------------------------------"
-    
     raise ArgumentError, "employeenumber blank", caller if attributes['employeenumber'] == nil || attributes['employeenumber'].empty? 
-    raise ArgumentError, "password blank", caller if attributes['password'] == nil || attributes['password'].empty? 
-
-    validate
     
+    validate(attributes)
+    if errors.length > 0 
+      return false
+    end
+
     begin
       p_iplanet = Provisioner::ProvisionerIplanet.new
       p_iplanet.init
@@ -67,18 +53,16 @@ class ProvXn < ActiveRecord::Base
       exit
     end
     
-    # usr 1 --> 1 mailhost
-    
     # retrieve usr from iplanet --  if not found, exit/fail
     begin
       usr = p_iplanet.retrieve_user(attributes['employeenumber'])
-    rescue Provisioner::ObjectNotFoundException
+    rescue ActiveRecord::RecordNotFound
       logger.error("{caller} object not found for emp no: [#{attributes['employeenumber']}] Exception: #{$!}")
       errors.add $!
-      raise
+      return false
     rescue
       logger.fatal("fail on retireve for update: Exception #{$!}")
-      raise
+      return false
     end
     
     begin
@@ -126,11 +110,9 @@ class ProvXn < ActiveRecord::Base
     rescue
       logger.error("error during update for employee number #{attributes['employeenumber']}: Exception #{$!}")
       errors.add $!
-      raise
+      return false
     end
-    
     return true
-    
   end
 
   # override
@@ -138,5 +120,23 @@ class ProvXn < ActiveRecord::Base
     raise NotImplementedError
   end
   
+  protected
+  
+  def validate(attributes)
+
+    if ( attributes['password'] == nil)
+      errors.add("password", "password is nil.") 
+      return # no use validating a nil password. return.
+    end
+
+    errors.add("password", "bad length. must be between 5 and 8 chars.") unless ( attributes['password'].length >= 5 && attributes['password'].length <= 8 )
+    
+    if (attributes['password'] =~ /^[a-zA-Z0-9!@#\$%\^&*]+$/) == nil
+      errors.add("password", "invalid chars in password: #{attributes['password']}")
+    end
+    
+  end
+  
 end
+
 
