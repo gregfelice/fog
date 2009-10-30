@@ -1,7 +1,7 @@
 
 require 'test_helper'
 require 'provisioner_iplanet'
-
+require 'provisioner_exception'
 
 #
 # need an imap client to test this
@@ -28,10 +28,10 @@ class ProvisionerIplanetTest < ActiveSupport::TestCase
     
     assert_not_nil p
     p.init
-
-    assert_raise(Provisoner::ProvisionerException){
+    
+    assert_raise(Provisioner::ProvisionerException) {
       usr = p.retrieve_user("0314981") # employeeid
-      }
+    }
     
   end
 

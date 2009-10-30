@@ -36,11 +36,8 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   def validate_iplanet(dn, password)
-    
     raise ArgumentError, "dn is nil", caller if dn == nil
     raise ArgumentError, "password is nil", caller if password == nil
-
-    
     @ldapconn = LDAP::Conn.new("ldap1.nyit.edu", 389)
     @ldapconn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
     @ldapconn.set_option( LDAP::LDAP_OPT_SIZELIMIT, 999 )

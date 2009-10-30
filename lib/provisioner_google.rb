@@ -77,7 +77,7 @@ module Provisioner
 
       resp = @rest_client.GET("/a/feeds/nyit.edu/user/2.0/#{username}")
       
-      feed = Document.new(resp)
+      feed = Document.new(resp.body)
       
       unless ! XPath.match( feed, "/AppsForYourDomainErrors" ).empty?
 

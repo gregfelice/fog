@@ -55,7 +55,7 @@ class RestClient
     
     #resp.each_header { |x| puts x }
     
-    return resp.body
+    return resp
     
   end
   

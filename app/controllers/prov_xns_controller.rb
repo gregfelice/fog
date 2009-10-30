@@ -1,6 +1,5 @@
-class ProvXnsController < ApplicationController
 
-  USER_NAME, PASSWORD = "gregf", "password"
+class ProvXnsController < ApplicationController
 
   before_filter :authenticate
 
@@ -18,11 +17,23 @@ class ProvXnsController < ApplicationController
   # GET /prov_xns/1
   # GET /prov_xns/1.xml
   def show
-    @prov_xn = ProvXn.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @prov_xn }
+    logger.debug("inside show")
+
+    begin
+      @prov_xn = ProvXn.find(params[:id])
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @prov_xn }
+      end
+    rescue (ActiveRecord::RecordNotFound)
+      respond_to do |format|
+        logger.error($!)
+        format.html
+        format.xml  { head :not_found }
+      end
+    rescue
+      
     end
   end
   
