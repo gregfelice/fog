@@ -65,11 +65,11 @@ class ProvisionerIplanetTest < ActiveSupport::TestCase
     
     p.init
     
-    testuser = ProvXn.new
-    testuser.employeenumber = "0010"
-    testuser.password = "kvetch"
+    testuser = Hash.new
+    testuser['employeenumber'] = "0011"
+    testuser['password'] = "kvetch2"
     
-    usr = p.update_user(testuser) # employeeid
+    usr = p.update_user_attributes(testuser) # employeeid
 
   end
 
