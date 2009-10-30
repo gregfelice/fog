@@ -6,6 +6,10 @@ require 'net/imap'
 =end
 class ProvXnTest < ActiveSupport::TestCase
 
+  @password = nil
+  
+  setup :initialize_password
+
   def test_retrieve_fog_thor_student_bad_employee_number
     mockusr = ProvisionerMock.get_fog_thor_student_bad_employee_number
     assert_raise(ActiveRecord::RecordNotFound) {
@@ -99,7 +103,7 @@ class ProvXnTest < ActiveSupport::TestCase
   def test_update_fog_thor_student_bad_employee_number
     mockusr = ProvisionerMock.get_fog_thor_student
     usr = ProvXn.find(mockusr.employeenumber)
-    assert ! usr.update_attributes( { 'employeenumber' => "BADEMPLOYEENUMBER", 'password' => 'newpass' } )
+    assert ! usr.update_attributes( { 'employeenumber' => "BADEMPLOYEENUMBER", 'password' => @password } )
     assert usr.errors.length == 1
   end
   
@@ -107,64 +111,53 @@ class ProvXnTest < ActiveSupport::TestCase
     mockusr = ProvisionerMock.get_fog_owexht_staff
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpass' } )
+    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => @password } )
     # validate via mailhost in question
-    validate_iplanet(usr.iplanetdn, 'newpass')
-    validate_adadmin(usr.adadmindn, 'newpass')
-    # change back to old password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
+    validate_iplanet(usr.iplanetdn, @password)
+    validate_adadmin(usr.adadmindn, @password)
   end
   
   def test_update_fog_thor_staff
     mockusr = ProvisionerMock.get_fog_thor_staff
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpass' } )
+    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => @password } )
     # validate via mailhost in question
-    validate_iplanet(usr.iplanetdn, 'newpass')
-    # change back to old password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
+    validate_iplanet(usr.iplanetdn, @password)
   end
   
   def test_update_fog_thor_staff_susp
     mockusr = ProvisionerMock.get_fog_thor_staff_susp
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpass' } )
+    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => @password } )
     # validate via mailhost in question
-    validate_iplanet(usr.iplanetdn, 'newpass')
-    # change back to old password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
+    validate_iplanet(usr.iplanetdn, @password)
   end
 
   def test_update_fog_gmail_student
     mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpass' } )
+    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => @password } )
     assert_equal usr.errors.length, 0, "user errors: [#{usr.errors.full_messages}]"
     # validate via mailhost in question
-    validate_iplanet(usr.iplanetdn, 'newpass')
-    validate_google(usr.username, 'newpass')
-    # change back to old password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
+    validate_iplanet(usr.iplanetdn, @password)
+    validate_google(usr.username, @password)
   end
 
   def test_update_fog_thor_student
     mockusr = ProvisionerMock.get_fog_thor_student
     usr = ProvXn.find(mockusr.employeenumber)
     # update the password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'newpass' } )
+    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => @password } )
     # validate via mailhost in question
-    
-    puts "dn: [#{usr.iplanetdn}]"
-    puts usr.errors.full_messages
 
     puts "dn: [#{usr.iplanetdn}]"
+    puts usr.errors.full_messages
+    puts "dn: [#{usr.iplanetdn}]"
     
-    validate_iplanet(usr.iplanetdn, 'newpass')
-    # change back to old password
-    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => mockusr.password } )
+    validate_iplanet(usr.iplanetdn, @password)
   end
 
   ##############################################################
@@ -172,11 +165,8 @@ class ProvXnTest < ActiveSupport::TestCase
   private
 
   def assert_usr(usr, mockusr)
-
     assert_equal usr.errors.length, 0 # no errors on the object
-
     assert_nil usr.password # for security purposes, retrieve methods will never return a password string 
-
     assert_equal usr.employeenumber, mockusr.employeenumber
     assert_equal usr.username, mockusr.username
     assert_equal usr.iplanetdn, mockusr.iplanetdn

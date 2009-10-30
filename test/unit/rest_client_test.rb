@@ -56,7 +56,7 @@ EOF
     usr = ProvisionerMock.get_fog_gmail_student
     resp = put(usr.employeenumber, get_update_xml(usr))
     assert_not_nil (resp.to_s =~ /HTTPOK/)
-    puts "usr: #{usr.inspect}"
+    #puts "usr: #{usr.inspect}"
     validate_google(usr.username, usr.password)
   end
 

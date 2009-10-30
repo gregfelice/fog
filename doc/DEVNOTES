@@ -32,10 +32,6 @@ accessible at: https://register.nyit.edu/reset/
 :: only works with LDAP currently. new version needs to work with the systems below.
 
 
-environment
-=============================
-do development on ???
-
 deployment design
 ============================
 password change system needs to be an isolatable system, deployable on a secure, internal box 
@@ -49,19 +45,6 @@ required: https/ssl
 alternatively, or perhaps first, based on schedule: 
 system to system basic ip restriction
 system to system password authentication
-
-reference
-================
-rails security
-http://www.rorsecurity.info/journal/?currentPage=3
-
-AR/LDAP
-http://tammersaleh.com/posts/ldap-server-for-activerecord-models
-
-REST client
-http://adamblog.heroku.com/past/2008/3/9/rest_client/
-
-
 
 misc notes
 ==================================================
@@ -99,42 +82,3 @@ on ip2 now, moving to automat
 
 
 
-
-
-
-
-
-
-
-ok - 
-   
-   prov_user
-   username
-   password
-
-   prov_session
-   ip
-   path
-   session_key
-
-
-valid for a specific time
-
-
-POST /accounts/login
-
-
-username = 
-password = 
-service = prov_xn
-
-
-
-
-XML parameter handling:
-
-actioncontroller.base
-  @@param_parsers = {}
-    cattr_accessor :param_parsers
-
-~/ext/rails/vendor/rails/actionpack/lib/action_controller/

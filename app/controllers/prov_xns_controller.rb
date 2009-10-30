@@ -3,23 +3,9 @@ class ProvXnsController < ApplicationController
 
   before_filter :authenticate
 
-  # GET /prov_xns
-  # GET /prov_xns.xml
-  def index
-    @prov_xns = ProvXn.all
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @prov_xns }
-    end
-  end
-
   # GET /prov_xns/1
   # GET /prov_xns/1.xml
   def show
-
-    logger.debug("inside show")
-
     begin
       @prov_xn = ProvXn.find(params[:id])
       respond_to do |format|
@@ -27,18 +13,60 @@ class ProvXnsController < ApplicationController
         format.xml  { render :xml => @prov_xn }
       end
     rescue (ActiveRecord::RecordNotFound)
-      respond_to do |format|
-        logger.error($!)
-        format.html
-        format.xml  { head :not_found }
-      end
-    rescue
-      
+      logger.error($!)
+      return head :not_found
     end
   end
   
+  # PUT /prov_xns/1
+  # PUT /prov_xns/1.xml
+  def update
+    begin
+      @prov_xn = ProvXn.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      logger.error("record not found during update: #{$!}")
+      return head :not_found
+    end
+    if @prov_xn.update_attributes(params[:prov_xn])
+      return head :ok
+    else
+      logger.error("error in controller: [#{$!}] :: [#{@prov_xn.errors.full_messages}]")
+      return head :bad_request
+    end
+  end
+
+
+  protected
+  
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      _authenticate(username, password, request.remote_ip)
+    end
+  end
+
+  def _authenticate(username, password, ip) 
+    if APP_CONFIG['perform-authentication']
+      return username == APP_CONFIG['username'] && password == APP_CONFIG['password'] && APP_CONFIG['allowed-hosts'] =~ /#{ip}/
+    else
+      return true
+    end
+  end
+
+  # GET /prov_xns
+  # GET /prov_xns.xml
+=begin
+  def index
+    @prov_xns = ProvXn.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @prov_xns }
+    end
+  end
+=end
+
   # GET /prov_xns/new
   # GET /prov_xns/new.xml
+=begin
   def new
     @prov_xn = ProvXn.new
 
@@ -52,9 +80,11 @@ class ProvXnsController < ApplicationController
   def edit
     @prov_xn = ProvXn.find(params[:id])
   end
+=end
 
   # POST /prov_xns
   # POST /prov_xns.xml
+=begin
   def create
     @prov_xn = ProvXn.new(params[:prov_xn])
 
@@ -69,36 +99,10 @@ class ProvXnsController < ApplicationController
       end
     end
   end
+=end
 
-  # PUT /prov_xns/1
-  # PUT /prov_xns/1.xml
-  def update
-    @prov_xn = ProvXn.find(params[:id])
-    
-    logger.debug "PROVXN: #{@prov_xn.inspect}"
-    logger.debug "PARAMS: #{params[:prov_xn]}"
-    logger.debug "ID: #{params[:id]}"
 
-    respond_to do |format|
-      #begin
-        #if @prov_xn.update
-        if @prov_xn.update_attributes(params[:prov_xn])
-          flash[:notice] = 'ProvXn was successfully updated.'
-          format.html { redirect_to(@prov_xn) }
-          format.xml  { head :ok }
-        else
-          logger.error($!)
-          format.html { render :action => "edit" }
-          format.xml  { render :xml => @prov_xn.errors, :status => :unprocessable_entity }
-        end
-      #rescue 
-      #  logger.error($!)
-      #  format.html { render :action => "edit" }
-      #  format.xml  { render :xml => @prov_xn.errors, :status => :unprocessable_entity }
-      #end
-    end
-  end
-
+=begin
   # DELETE /prov_xns/1
   # DELETE /prov_xns/1.xml
   def destroy
@@ -110,23 +114,6 @@ class ProvXnsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
-  protected
-  
-  def authenticate
-    authenticate_or_request_with_http_basic do |username, password|
-      _authenticate(username, password, request.remote_ip)
-    end
-  end
-
-  def _authenticate(username, password, ip) 
-    
-    if APP_CONFIG['perform-authentication']
-      return username == APP_CONFIG['username'] && password == APP_CONFIG['password'] && APP_CONFIG['allowed-hosts'] =~ /#{ip}/
-    else
-      return true
-    end
-
-  end
+=end
 
 end

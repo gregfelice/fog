@@ -44,13 +44,12 @@ class ProvXn < ActiveRecord::Base
   
   # override
   def update_attributes(attributes)
-    logger.debug("update attributes for: [#{attributes.inspect}]")
+    #logger.debug("update attributes for: [#{attributes.inspect}]")
     raise ArgumentError, "employeenumber blank", caller if attributes['employeenumber'] == nil || attributes['employeenumber'].empty? 
     validate(attributes)
     if errors.length > 0
       return false
     end
-
     begin
       p_iplanet = Provisioner::ProvisionerIplanet.new
       p_iplanet.init
@@ -63,31 +62,37 @@ class ProvXn < ActiveRecord::Base
       errors.add $!
       exit
     end
-
     begin
       # if retireve user from iplanet is true (is always), update iplanet info
       begin
         usr = p_iplanet.retrieve_user(attributes['employeenumber'])
-        logger.debug("usr found in iplanet for [#{usr.employeenumber}]")
+        raise RuntimeError, "usr.username nil or empty", caller if usr.username == nil || usr.username.empty?
+        raise RuntimeError, "usr.employeenumber nil or empty", caller if usr.employeenumber == nil || usr.employeenumber.empty?
+        logger.debug("usr found in iplanet for [#{usr.employeenumber}], updating record...")
+        p_iplanet.update_user_attributes(attributes)
+        logger.debug("usr found in iplanet for [#{usr.employeenumber}], updated.")
       rescue ActiveRecord::RecordNotFound
-        logger.error("{caller} object not found for emp no: [#{attributes['employeenumber']}] Exception: #{$!}")
+        logger.error("object not found for emp no: [#{attributes['employeenumber']}] Exception: #{$!}")
         errors.add $!
         return false
       end
       # if retireve user from google is true, update google info
       begin
-        usr = p_google.retrieve_user(usr.username)
-        logger.debug("usr found in google for [#{usr.username}]")
+        p_google.retrieve_user(usr.username)
+        attributes.merge!( { 'username' => usr.username } ) # add the retrived username to the attributes
+        logger.debug("usr found in google for [#{usr.username}], updating record...")
         p_google.update_user_attributes(attributes)
+        logger.debug("usr found in google for [#{usr.username}], updated.")
       rescue ActiveRecord::RecordNotFound
         logger.debug("usr not found in google for [#{usr.username}]")
         # do nothing...
       end
       # if retireve user from adadmin is true, update adadmin info
       begin
-        usr = p_adadmin.retrieve_user(attributes['employeenumber'])
-        logger.debug("usr found in adadmin for [#{usr.employeenumber}]")
+        p_adadmin.retrieve_user(attributes['employeenumber'])
+        logger.debug("usr found in adadmin for [#{usr.employeenumber}], updating record...")
         p_adadmin.update_user_attributes(attributes)
+        logger.debug("usr found in adadmin for [#{usr.employeenumber}], updated.")
       rescue ActiveRecord::RecordNotFound
         logger.debug("usr not found in adadmin for [#{usr.employeenumber}]")
         # do nothing...

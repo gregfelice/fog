@@ -1,25 +1,32 @@
 #!/usr/bin/ruby
 
+#ENV['RUBYLIB']=.:./lib:./test
+
+require 'rest_client'
+
 employeenumber=ENV['LDAP_EMPLOYEENUMBER']
-userpassword=ENV['LDAP_USERPASSWORD']
+password=ENV['LDAP_USERPASSWORD']
 
-client = RestClient.new('automattest.nyit.edu', 80, {'content-type' => 'application/atom+xml'})
+# start parameter checking
+# end parameter checking
 
-xml = <<EOF    
+xml = <<EOF
 <prov-xn>
-  <comment nil="true"/>
-  <created-at nil="true" type="datetime"/>
   <employeenumber>#{employeenumber}</employeenumber>
-  <familyname nil="true"/>
-  <givenname nil="true"/>
-  <password>#{userpassword}</password>
-  <suspended nil="true"/>
-  <updated-at nil="true" type="datetime"/>
-  <username nil="true"/>
+  <password>#{password}</password>
 </prov-xn>
 EOF
 
+client = RestClient.new('automattest.nyit.edu', 443, {'content-type' => 'application/xml'})
+client.basic_auth('gregf', 'password')
+
 resp = client.PUT("/prov_xns/#{employeenumber}.xml", xml)    
 
-puts resp
+if ! ((resp.to_s =~ /HTTPOK/) == nil) 
+  puts "resetpw.rb - exiting with no errors"
+  exit 0 
+else 
+  puts "resetpw.rb - exiting with errors: #{resp.to_s}"
+  exit 1
+end
 

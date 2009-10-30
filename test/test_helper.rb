@@ -59,4 +59,10 @@ class ActiveSupport::TestCase
     imap.login("#{username}@nyit.edu", password)
   end
 
+  def initialize_password(size=8)
+    s = ""
+    size.times { s << (i = Kernel.rand(62); i += ((i < 10) ? 48 : ((i < 36) ? 55 : 61 ))).chr }
+    @password = s
+  end
+
 end
