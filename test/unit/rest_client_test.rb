@@ -15,6 +15,10 @@ require 'ldap'
 =end
 class RestClientTest < ActiveSupport::TestCase
 
+  @password = nil
+  
+  setup :initialize_password
+
   ##############################################################
   
   def test_retrieve
@@ -56,34 +60,36 @@ EOF
     usr = ProvisionerMock.get_fog_gmail_student
     resp = put(usr.employeenumber, get_update_xml(usr))
     assert_not_nil (resp.to_s =~ /HTTPOK/)
-    #puts "usr: #{usr.inspect}"
-    validate_google(usr.username, usr.password)
+    # puts "usr: #{usr.inspect}"
+    validate_iplanet(usr.iplanetdn, @password)
+    validate_google(usr.username, @password)
   end
 
   def test_update_failed_not_found
     bad_employeenumber = "191231233"
     usr = ProvisionerMock.get_fog_gmail_student
     resp = put(bad_employeenumber, get_update_xml(usr))
-    puts "resp: [#{resp}]"
-    puts "resp: [#{resp.body}]"
+    #puts "resp: [#{resp}]"
+    #puts "resp: [#{resp.body}]"
     assert_not_nil (resp.to_s =~ /HTTPNotFound/)
   end
 
   def test_update_failed_bad_password
-    
+    usr = ProvisionerMock.get_fog_gmail_student
     error = <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <errors>
-  <error>Password must contain at least two numeric characters.</error>
+<error>Password must contain at least two numeric characters.</error>
 </errors>
 EOF
-    usr = ProvisionerMock.get_fog_gmail_student
-    usr.password = "abcdef"
-    resp = put(usr.employeenumber, get_update_xml(usr))
-    puts "resp: [#{resp}]"
-    puts "resp: [#{resp.body}]"
-    #assert_not_nil (resp.to_s =~ /HTTPNotFound/)
-    assert_equal resp.body, error
+    xml = <<EOF
+      <prov-xn>
+        <employeenumber>#{usr.employeenumber}</employeenumber>
+        <password>BADPASS</password>
+      </prov-xn>
+EOF
+    resp = put(usr.employeenumber, xml)
+    assert (resp.body =~ /errors/) != nil
   end
   
   ##############################################################
@@ -99,7 +105,7 @@ EOF
   end
 
   def get_client
-    client = RestClient.new('automattest.nyit.edu', 80, {'content-type' => 'application/xml'})
+    client = RestClient.new('automattest.nyit.edu', 3000, {'content-type' => 'application/xml'})
     client.basic_auth('gregf', 'password')
     return client
   end
@@ -108,7 +114,7 @@ EOF
     xml = <<EOF
       <prov-xn>
         <employeenumber>#{prov_xn.employeenumber}</employeenumber>
-        <password>#{prov_xn.password}</password>
+        <password>#{@password}</password>
       </prov-xn>
 EOF
     return xml
