@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mongrel_rails cluster::configure -e development -p 81 -N 10 -a 127.0.0.1 
+
+#mongrel_rails start --address=127.0.0.1 -d

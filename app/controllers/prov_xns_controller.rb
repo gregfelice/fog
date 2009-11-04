@@ -25,16 +25,15 @@ class ProvXnsController < ApplicationController
       @prov_xn = ProvXn.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       logger.error("record not found during update: #{$!}")
-      return(head :not_found) # note, should also return errors as xml.
+      return(head :not_found)
     end
     if @prov_xn.update_attributes(params[:prov_xn])
       return(head :ok)
     else
       logger.error("validation error during update: [#{$!}] :: [#{@prov_xn.errors.full_messages}]")
-      render :xml => @prov_xn.errors
+      render :xml => @prov_xn.errors, :status => 400
     end
   end
-
 
   protected
   

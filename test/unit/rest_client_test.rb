@@ -61,6 +61,9 @@ EOF
     resp = put(usr.employeenumber, get_update_xml(usr))
     assert_not_nil (resp.to_s =~ /HTTPOK/)
     # puts "usr: #{usr.inspect}"
+    puts "-------------------------------------------------------------------------"
+    puts resp
+    puts resp.body
     validate_iplanet(usr.iplanetdn, @password)
     validate_google(usr.username, @password)
   end
@@ -69,6 +72,9 @@ EOF
     bad_employeenumber = "191231233"
     usr = ProvisionerMock.get_fog_gmail_student
     resp = put(bad_employeenumber, get_update_xml(usr))
+    puts "-------------------------------------------------------------------------"
+    puts resp
+    puts resp.body
     #puts "resp: [#{resp}]"
     #puts "resp: [#{resp.body}]"
     assert_not_nil (resp.to_s =~ /HTTPNotFound/)
@@ -89,6 +95,9 @@ EOF
       </prov-xn>
 EOF
     resp = put(usr.employeenumber, xml)
+    puts "-------------------------------------------------------------------------"
+    puts resp
+    puts resp.body
     assert (resp.body =~ /errors/) != nil
   end
   
