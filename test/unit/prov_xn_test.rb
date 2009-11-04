@@ -66,6 +66,39 @@ class ProvXnTest < ActiveSupport::TestCase
     mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
     assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => nil } )
+    puts "errors: [#{usr.errors.full_messages}]"
+
+    puts "errors: [#{usr.errors.to_xml}]"
+
+    assert_equal usr.errors.length, 1
+  end
+
+  # validaiton should prevent badly formed passwords
+  # check for bad chars, too long, too short
+  def test_update_fog_password_has_spaces
+    mockusr = ProvisionerMock.get_fog_gmail_student
+    usr = ProvXn.find(mockusr.employeenumber)
+    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'sd 13d' } )
+    #puts "errors: [#{usr.errors.full_messages}]"
+    assert_equal usr.errors.length, 1
+  end
+
+  # validaiton should prevent badly formed passwords
+  # check for bad chars, too long, too short
+  def test_update_fog_password_has_no_numbers
+    mockusr = ProvisionerMock.get_fog_gmail_student
+    usr = ProvXn.find(mockusr.employeenumber)
+    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'abcdefgh' } )
+    #puts "errors: [#{usr.errors.full_messages}]"
+    assert_equal usr.errors.length, 1
+  end
+ 
+  # validaiton should prevent badly formed passwords
+  # check for bad chars, too long, too short
+  def test_update_fog_password_has_no_letters
+    mockusr = ProvisionerMock.get_fog_gmail_student
+    usr = ProvXn.find(mockusr.employeenumber)
+    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => '12345678' } )
     #puts "errors: [#{usr.errors.full_messages}]"
     assert_equal usr.errors.length, 1
   end
@@ -75,7 +108,7 @@ class ProvXnTest < ActiveSupport::TestCase
   def test_update_fog_password_too_short
     mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
-    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => "xx" } )
+    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => "xx13" } )
     #puts "errors: [#{usr.errors.full_messages}]"
     assert_equal usr.errors.length, 1
   end
@@ -85,7 +118,7 @@ class ProvXnTest < ActiveSupport::TestCase
   def test_update_fog_password_too_long
     mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
-    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => "xxxxxxxxxxxxxxxxxxxxxxxx" } ) 
+    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => "xxxx133xxxxxxxxxxxxxxxxxxxx" } ) 
     #puts "errors: [#{usr.errors.full_messages}]"
     assert_equal usr.errors.length, 1
   end
@@ -95,7 +128,7 @@ class ProvXnTest < ActiveSupport::TestCase
   def test_update_fog_password_bad_chars
     mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
-    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => "//??//??" } ) 
+    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => "aa33>''" } ) 
     #puts "errors: [#{usr.errors.full_messages}]"
     assert_equal usr.errors.length, 1
   end
@@ -153,9 +186,9 @@ class ProvXnTest < ActiveSupport::TestCase
     assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => @password } )
     # validate via mailhost in question
 
-    puts "dn: [#{usr.iplanetdn}]"
-    puts usr.errors.full_messages
-    puts "dn: [#{usr.iplanetdn}]"
+    #puts "dn: [#{usr.iplanetdn}]"
+    #puts usr.errors.full_messages
+    #puts "dn: [#{usr.iplanetdn}]"
     
     validate_iplanet(usr.iplanetdn, @password)
   end

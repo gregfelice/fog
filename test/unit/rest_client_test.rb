@@ -60,12 +60,30 @@ EOF
     validate_google(usr.username, usr.password)
   end
 
-  def test_update_failed
+  def test_update_failed_not_found
     bad_employeenumber = "191231233"
     usr = ProvisionerMock.get_fog_gmail_student
     resp = put(bad_employeenumber, get_update_xml(usr))
-    #puts "resp: [#{resp}]"
+    puts "resp: [#{resp}]"
+    puts "resp: [#{resp.body}]"
     assert_not_nil (resp.to_s =~ /HTTPNotFound/)
+  end
+
+  def test_update_failed_bad_password
+    
+    error = <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<errors>
+  <error>Password must contain at least two numeric characters.</error>
+</errors>
+EOF
+    usr = ProvisionerMock.get_fog_gmail_student
+    usr.password = "abcdef"
+    resp = put(usr.employeenumber, get_update_xml(usr))
+    puts "resp: [#{resp}]"
+    puts "resp: [#{resp.body}]"
+    #assert_not_nil (resp.to_s =~ /HTTPNotFound/)
+    assert_equal resp.body, error
   end
   
   ##############################################################

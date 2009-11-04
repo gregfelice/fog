@@ -1,14 +1,18 @@
 #!/usr/bin/ruby
 
-#ENV['RUBYLIB']=.:./lib:./test
-
 require 'rest_client'
+require "rexml/document"
+include REXML
+
+def get_error_string(xml)
+  s = ""
+  doc = Document.new(xml)
+  doc.elements.each("errors/error") { |element| s << "[#{element.text}]" }
+  return s
+end
 
 employeenumber=ENV['LDAP_EMPLOYEENUMBER']
 password=ENV['LDAP_USERPASSWORD']
-
-# start parameter checking
-# end parameter checking
 
 xml = <<EOF
 <prov-xn>
@@ -22,11 +26,14 @@ client.basic_auth('gregf', 'password')
 
 resp = client.PUT("/prov_xns/#{employeenumber}.xml", xml)    
 
-if ! ((resp.to_s =~ /HTTPOK/) == nil) 
-  puts "resetpw.rb - exiting with no errors"
+if ((resp.body =~ /errors/) == nil)
+  puts "[#{Time.now}] password reset success: employeenumber #{employeenumber}"
   exit 0 
 else 
-  puts "resetpw.rb - exiting with errors: #{resp.to_s}"
+  puts "[#{Time.now}] password reset error: employeenumber #{employeenumber}: #{get_error_string(resp.body)}"
   exit 1
 end
+
+
+
 

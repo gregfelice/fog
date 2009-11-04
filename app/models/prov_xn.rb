@@ -113,14 +113,33 @@ class ProvXn < ActiveRecord::Base
   protected
   
   def validate(attributes)
-    if ( attributes['password'] == nil)
-      errors.add("password", "password is nil.") 
+
+    password = attributes['password']
+    
+    # password nil check
+    if (password == nil)
+      errors.add("password", "Password is nil.")  
       return # no use validating a nil password. return.
     end
-    errors.add("password", "bad length. must be between 5 and 8 chars.") unless ( attributes['password'].length >= 5 && attributes['password'].length <= 8 )
-    if (attributes['password'] =~ /^[a-zA-Z0-9!@#\$%\^&*]+$/) == nil
-      errors.add("password", "invalid chars in password: #{attributes['password']}")
+
+    # * Password cannot contain spaces.
+    # errors.add("password", "cannot contain spaces or tabs.") unless password.grep(/(.*[\s])/).length == 0
+
+    # * Each password must contain at least two alphabetic characters (all uppercase and lowercase letters) and at least two numeric or special character.
+    errors.add("password", "must contain at least two numeric characters.") unless password.grep(/(.*\d){2,}/).length > 0
+
+    # at least 2 letters
+    errors.add("password", "must contain at least 2 letters") unless password.grep(/(.*[A-Za-z]){2,}/).length > 0
+
+    # * Password should be minimum six characters long and a maximum of eight characters.
+    errors.add("password", "must be between 6 and 8 chars.") unless (password.length >= 6 && password.length <= 8)
+
+    # * Only the following special characters are allowed  !,./+=-_~#$^ 
+    i = (password =~ /[^a-zA-Z0-9\/\^\$\!\,\.\+\=\-\_\~\#]/)
+    if i != nil
+      errors.add("password", "invalid char or spaces in #{password}: \"#{password[i,1]}\"")
     end
+
   end
   
 end

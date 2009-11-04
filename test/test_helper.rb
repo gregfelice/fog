@@ -59,8 +59,8 @@ class ActiveSupport::TestCase
     imap.login("#{username}@nyit.edu", password)
   end
 
-  def initialize_password(size=8)
-    s = ""
+  def initialize_password(size=4)
+    s = "22AA" # to guarantee there is always 2 letters and 2 numbers
     size.times { s << (i = Kernel.rand(62); i += ((i < 10) ? 48 : ((i < 36) ? 55 : 61 ))).chr }
     @password = s
   end

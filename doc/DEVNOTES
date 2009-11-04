@@ -77,6 +77,14 @@ ip2 google # crontab -l
 
 on ip2 now, moving to automat
 
+https://register.nyit.edu/reset_test/
+
+
+* Password should be minimum six characters long and a maximum of eight characters.
+* Password cannot contain spaces.
+* Each password must contain at least two alphabetic characters (all uppercase and lowercase letters) and at least two numeric or special character.
+* Only the following special characters are allowed ,./+=-_~!#$^ 
+
 
 
 
