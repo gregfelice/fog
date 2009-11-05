@@ -1,0 +1,50 @@
+
+fog installation checklist
+
+server installation
+===================
+
+base sw packages
+
+1. (sudo) install ruby 1.8.7
+2. (sudo) install rubygems
+3. (sudo) gem install:
+  activeldap (1.2.0)
+  actionmailer (2.3.4)
+  actionpack (2.3.4)
+  activerecord (2.3.4)
+  activeresource (2.3.4)
+  activesupport (2.3.4)
+  rack (1.0.0)
+  rails (2.3.4)
+  rake (0.8.7)
+  cgi_multipart_eof_fix (2.5.0)
+  daemons (1.0.10)
+  fastthread (1.0.7)
+  gem_plugin (0.2.3)
+  gettext (2.0.4)
+  gettext_activerecord (2.0.4)
+  locale (2.0.4)
+  mongrel (1.1.5)
+  mongrel_cluster (1.0.5)
+  mysql (2.8.1)
+
+server install
+
+1. mkdir /usr/local/apps
+2. tar -zxvf fog.tar.gz
+3. 
+
+
+
+
+
+
+script-based client install
+
+
+
+
+
+
+
