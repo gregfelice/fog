@@ -2,6 +2,7 @@
 class ProvXnsController < ApplicationController
 
   before_filter :authenticate
+  filter_parameter_logging :password
 
   # GET /prov_xns/1
   # GET /prov_xns/1.xml
