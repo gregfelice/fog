@@ -2,6 +2,42 @@ require 'provisioner_google'
 require 'provisioner_adadmin'
 require 'provisioner_iplanet'
 
+=begin
+
+bug:
+
+date: 4/6/2010
+
+summary: 
+
+validation error - 
+  this:  
+    Each password must contain at least two alphabetic characters (all uppercase and lowercase letters) and at least two numeric or special character.
+  is mistakenly implemented as this: 
+    Each password must contain at least two alphabetic characters (all uppercase and lowercase letters) and at least two numeric AND special character.
+
+details: 
+
+Hi, I ran into a test case today that exemplifies the issue. Dellene Kornitsky, 0581111.  She tried setting a password of #1champ, which got past the web portion but got the following error on the back end:
+
+Processing ProvXnsController#update to xml (for 64.35.176.69 at 2010-03-30 09:58:49) [PUT]
+  Parameters: {"format"=>"xml", "action"=>"update", "id"=>"0581111", "prov_xn"=>{"employeenumber"=>"0581111", "password"=>"[FILTERED]"}, "controller"=>"prov_xns"}
+validation error during update: [] :: [Password must contain at least two numeric characters.]
+Completed in 5367ms (View: 3, DB: 0) | 400 Bad Request [http://automat.nyit.edu/prov_xns/0581111.xml]
+
+The rules on the web are:
+
+    * Password should be minimum six characters long and a maximum of eight characters.
+    * Password cannot contain spaces.
+    * Each password must contain at least two alphabetic characters (all uppercase and lowercase letters) and at least two numeric or special character.
+    * Only the following special characters are allowed ,./+=-_~!#$^ 
+
+The password does indeed contain a total of 2 characters that are either numeric or special characters, so it looks like the issue is on the back end.  Greg, do you agree?
+
+
+
+=end
+
 class ProvXn < ActiveRecord::Base
   
   #
@@ -122,24 +158,23 @@ class ProvXn < ActiveRecord::Base
       return # no use validating a nil password. return.
     end
 
-    # * Password cannot contain spaces.
-    # errors.add("password", "cannot contain spaces or tabs.") unless password.grep(/(.*[\s])/).length == 0
-
-    # * Each password must contain at least two alphabetic characters (all uppercase and lowercase letters) and at least two numeric or special character.
-    errors.add("password", "must contain at least two numeric characters.") unless password.grep(/(.*\d){2,}/).length > 0
-
-    # at least 2 letters
-    errors.add("password", "must contain at least 2 letters") unless password.grep(/(.*[A-Za-z]){2,}/).length > 0
-
-    # * Password should be minimum six characters long and a maximum of eight characters.
-    errors.add("password", "must be between 6 and 8 chars.") unless (password.length >= 6 && password.length <= 8)
+    special = "\/\^\$\!\,\.\+\=\-\_\~\#"
 
     # * Only the following special characters are allowed  !,./+=-_~#$^ 
     i = (password =~ /[^a-zA-Z0-9\/\^\$\!\,\.\+\=\-\_\~\#]/)
     if i != nil
-      errors.add("password", "invalid char or spaces in #{password}: \"#{password[i,1]}\"")
+      errors.add "password",  "invalid char or spaces in #{password}: \"#{password[i,1]}\""
     end
 
+    # * Password should be minimum six characters long and a maximum of eight characters.
+    errors.add "password", "must be between 6 and 8 chars." unless (password.length >= 6 && password.length <= 8)
+
+    # at least 2 letters
+    errors.add "password", "must contain at least 2 letters" unless password.grep(/(.*[A-Za-z]){2,}/).length > 0
+
+    # must have a total of 2 digits or spec chars
+    errors.add "password", "must contain at least 2 digits or special chars" unless password.grep(/[0-9\/\^\$\!\,\.\+\=\-\_\~\#]{2,}/).length > 0
+    
   end
   
 end

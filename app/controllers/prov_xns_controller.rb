@@ -45,6 +45,15 @@ class ProvXnsController < ApplicationController
   end
 
   def _authenticate(username, password, ip) 
+
+info = <<EOF
+username: #{username}
+password: #{password}
+ip address: #{ip}
+EOF
+
+    logger.debug(info)
+    
     if APP_CONFIG['perform-authentication']
       return username == APP_CONFIG['username'] && password == APP_CONFIG['password'] && APP_CONFIG['allowed-hosts'] =~ /#{ip}/
     else

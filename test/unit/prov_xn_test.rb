@@ -6,9 +6,23 @@ require 'net/imap'
 =end
 class ProvXnTest < ActiveSupport::TestCase
 
+  @@debug = false
+
   @password = nil
   
   setup :initialize_password
+
+  #
+  # altiris bug #: 76285
+  #
+  def test_bug_76285
+    mockusr = ProvisionerMock.get_fog_gmail_student
+    usr = ProvXn.find(mockusr.employeenumber)
+    assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => "#1champ" } )
+    assert_equal usr.errors.length, 0
+  end
+
+  
 
   def test_retrieve_fog_thor_student_bad_employee_number
     mockusr = ProvisionerMock.get_fog_thor_student_bad_employee_number
@@ -85,11 +99,22 @@ class ProvXnTest < ActiveSupport::TestCase
 
   # validaiton should prevent badly formed passwords
   # check for bad chars, too long, too short
-  def test_update_fog_password_has_no_numbers
+  def test_update_fog_password_is_all_chars_lowcase
     mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
-    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'abcdefgh' } )
-    #puts "errors: [#{usr.errors.full_messages}]"
+    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'abcdef' } )
+    puts "errors: [#{usr.errors.full_messages}]" if @@debug
+    assert_equal usr.errors.length, 1
+  end
+
+  # validaiton should prevent badly formed passwords
+  # check for bad chars, too long, too short
+  def test_update_fog_password_is_all_chars_upcase
+    mockusr = ProvisionerMock.get_fog_gmail_student
+    usr = ProvXn.find(mockusr.employeenumber)
+    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => 'ABCDEF' } )
+    puts "errors length: #{usr.errors.length}"
+    puts "errors: [#{usr.errors.full_messages}]"
     assert_equal usr.errors.length, 1
   end
  
@@ -126,10 +151,10 @@ class ProvXnTest < ActiveSupport::TestCase
   # validaiton should prevent badly formed passwords
   # check for bad chars, too long, too short
   def test_update_fog_password_bad_chars
+    badpass = "aa33>''"
     mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
-    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => "aa33>''" } ) 
-    #puts "errors: [#{usr.errors.full_messages}]"
+    assert ! usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => badpass } ) 
     assert_equal usr.errors.length, 1
   end
   

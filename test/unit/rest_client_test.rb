@@ -15,9 +15,11 @@ require 'ldap'
 =end
 class RestClientTest < ActiveSupport::TestCase
 
+  @@debug = false
+
   @password = nil
   
-  setup :initialize_password
+  setup :initialize_password #provides a random password for testing
 
   ##############################################################
   
@@ -44,8 +46,8 @@ class RestClientTest < ActiveSupport::TestCase
 </prov-xn>
 EOF
 
-    #puts "[#{xml}]"
-    #puts "[#{resp}]"
+    puts "[#{xml}]"
+    puts "[#{resp}]"
 
     assert xml.eql?(resp.body.to_s)
   end
@@ -84,20 +86,20 @@ EOF
     usr = ProvisionerMock.get_fog_gmail_student
     error = <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
-<errors>
-<error>Password must contain at least two numeric characters.</error>
-</errors>
+  <errors>
+    <error>Password must contain at least two numeric characters.</error>
+  </errors>
 EOF
     xml = <<EOF
-      <prov-xn>
-        <employeenumber>#{usr.employeenumber}</employeenumber>
-        <password>BADPASS</password>
-      </prov-xn>
+<prov-xn>
+  <employeenumber>#{usr.employeenumber}</employeenumber>
+  <password>BADPASS</password>
+</prov-xn>
 EOF
     resp = put(usr.employeenumber, xml)
-    puts "-------------------------------------------------------------------------"
-    puts resp
-    puts resp.body
+    puts "-------------------------------------------------------------------------" if @@debug
+    puts "response: #{resp}" if @@debug
+    puts "body: #{resp.body}" if @@debug
     assert (resp.body =~ /errors/) != nil
   end
   
