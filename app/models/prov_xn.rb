@@ -165,15 +165,18 @@ class ProvXn < ActiveRecord::Base
     if i != nil
       errors.add "password",  "invalid char or spaces in #{password}: \"#{password[i,1]}\""
     end
-
+    
     # * Password should be minimum six characters long and a maximum of eight characters.
     errors.add "password", "must be between 6 and 8 chars." unless (password.length >= 6 && password.length <= 8)
-
+    
     # at least 2 letters
     errors.add "password", "must contain at least 2 letters" unless password.grep(/(.*[A-Za-z]){2,}/).length > 0
 
     # must have a total of 2 digits or spec chars
-    errors.add "password", "must contain at least 2 digits or special chars" unless password.grep(/[0-9\/\^\$\!\,\.\+\=\-\_\~\#]{2,}/).length > 0
+    numbers = password.scan(/[0-9]/).length
+    specials = password.scan(/[\/\^\$\!\,\.\+\=\-\_\~\#"]/).length
+    
+    errors.add "password", "must contain at least 2 digits or special chars" unless (numbers + specials) >= 2
     
   end
   
