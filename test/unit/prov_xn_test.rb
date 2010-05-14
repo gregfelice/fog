@@ -15,14 +15,26 @@ class ProvXnTest < ActiveSupport::TestCase
   #
   # altiris bug #: 76285
   #
-  def test_bug_76285
+  def test_bug_76285a
     mockusr = ProvisionerMock.get_fog_gmail_student
     usr = ProvXn.find(mockusr.employeenumber)
     assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => "#1champ" } )
     assert_equal usr.errors.length, 0
   end
 
-  
+  #
+  # altiris bug #: 76285
+  #
+  def test_bug_76285b
+    mockusr = ProvisionerMock.get_fog_gmail_student
+    usr = ProvXn.find(mockusr.employeenumber)
+    passwords = [ 'sce!e!a', 'scene24', 's24ene', 's2c4ene', 'ch3rria!', 'ch3rria9', 'babyd0m0', 'qov3d8y7' ]
+    passwords.each do | password |
+      #puts "testing [#{password}]"
+      assert usr.update_attributes( { 'employeenumber' => usr.employeenumber, 'password' => password } ), usr.errors.inspect
+      assert_equal usr.errors.length, 0, "error length is not what it should be."
+    end
+  end
 
   def test_retrieve_fog_thor_student_bad_employee_number
     mockusr = ProvisionerMock.get_fog_thor_student_bad_employee_number
